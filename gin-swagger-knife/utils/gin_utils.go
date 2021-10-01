@@ -1,6 +1,8 @@
 package utils
 
 import (
+	"encoding/base64"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
@@ -84,7 +86,12 @@ func GetCss(router *gin.Engine, relativePath string, content string) {
 }
 
 func GetOther(router *gin.Engine, relativePath string, base64Content string) {
-	rs := []byte(base64Content)
+
+	rs, err := base64.StdEncoding.DecodeString(base64Content)
+	if nil != err {
+		fmt.Println("err:", err)
+		return
+	}
 	router.GET(relativePath, func(ctx *gin.Context) {
 		ctx.Status(http.StatusOK)
 		ctx.Header("Content-length", strconv.Itoa(len(rs)))
