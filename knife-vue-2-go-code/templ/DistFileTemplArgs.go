@@ -6,6 +6,7 @@ import "encoding/json"
 type DistFileTemplArgs struct {
 	PackageName    string `json:"PackageName"`
 	FileBase64     string `json:"FileBase64"`
+	FilePath       string `json:"FilePath"`
 	FileRelavePath string `json:"FileRelavePath"`
 	FileType       string `json:"FileType"`
 	FileName       string `json:"FileName"`

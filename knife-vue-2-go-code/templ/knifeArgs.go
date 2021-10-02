@@ -4,7 +4,7 @@ import "encoding/json"
 
 // 模板参数
 type KnifeArgs struct {
-	KnifeImport map[string]string `json:"KnifeImport"`
+	KnifeImport map[string]string `json:"KnifeImport"` // 别名 ->  包名
 	KnifeLine   []string            `json:"KnifeLine"`
 }
 
