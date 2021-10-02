@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"text/template"
 	"knife-vue-2-go-code/utils"
 	"os"
 	"strconv"
@@ -42,9 +43,9 @@ func ScanKnifeVueDist(dirPath string, relativePath string, packageName string, o
 		}
 
 		//fmt.Println("***********", templArgs.String())
-		//makeDistGoFile(templArgs, outputPath)
+		makeDistGoFile(templArgs, outputPath)
 
-		add2KnifeArgs(knifeArgs, templArgs)
+		//add2KnifeArgs(knifeArgs, templArgs)
 
 	}
 }
@@ -81,7 +82,15 @@ func makeDistGoFile(args DistFileTemplArgs, path string) {
 
 	defer f.Close()
 
-	io.WriteString(f, args.FileBase64)
+	tmpl, err := template.New("WEBJARS_TEMPL").Parse(WEBJARS_TEMPL)
+	if err != nil {
+		panic(err)
+	}
+
+	tmpl.Execute(os.Stdout,args)
+	//tmpl.Execute(f,args)
+
+	//io.WriteString(f, args.FileBase64)
 
 }
 

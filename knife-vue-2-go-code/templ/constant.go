@@ -6,6 +6,7 @@ const (
 import (
 	v2 "gin-swagger-knife/v2"
 	"github.com/gin-gonic/gin"
+	{{}}
 
 
 )
@@ -17,7 +18,7 @@ func InitSwaggerKnife(router *gin.Engine, swaggerJson string) {
 
 }`
 
-	WEBJARS_TEMPL = `package {{PackageName}}
+	WEBJARS_TEMPL = `package {{.PackageName}}
 
 import (
 	"gin-swagger-knife/knife/constant"
@@ -26,12 +27,14 @@ import (
 )
 
 const (
-	{{FileName2}}_BASE64        = "{{FileBase64}}"
-	{{FileName2}}_RELATIVE_PATH = constant.ROOT_PATH + "{{FileRelavePath}}}"
+	{{.FileName2}}_BASE64        = "{{.FileBase64}}"
+	{{.FileName2}}_RELATIVE_PATH = constant.ROOT_PATH + "{{.FileRelavePath}}}"
 )
 
 func AddRouter(router *gin.Engine) {
-	utils.GetJson(router, {{FileName2}}_BASE64, {{FileName2}}_RELATIVE_PATH)
+	{{if eq .FileType  ''}}
+	utils.GetJson(router, {{.FileName2}}_BASE64, {{.FileName2}}_RELATIVE_PATH)
+	{{end}}
 }
 `
 )
