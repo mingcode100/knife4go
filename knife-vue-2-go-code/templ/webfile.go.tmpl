@@ -1,0 +1,32 @@
+package {{.PackageName}}
+
+
+import (
+	"gin-swagger-knife/constant"
+	"gin-swagger-knife/utils"
+	"github.com/gin-gonic/gin"
+
+)
+
+func AddRouterOf{{.FileName3}}(router *gin.Engine) {
+    {{if eq .FileType "html"}}
+    utils.GetHtml(router, {{.FileName2}}_BASE64_OR_CONTENT, {{.FileName2}}_RELATIVE_PATH)
+    {{else if eq .FileType "js"}}
+    utils.GetJs(router, {{.FileName2}}_BASE64_OR_CONTENT, {{.FileName2}}_RELATIVE_PATH)
+    {{else if eq .FileType "css"}}
+    utils.GetCss(router, {{.FileName2}}_BASE64_OR_CONTENT, {{.FileName2}}_RELATIVE_PATH)
+	{{else}}
+	utils.GetOther(router, {{.FileName2}}_BASE64_OR_CONTENT, {{.FileName2}}_RELATIVE_PATH)
+	{{end}}
+}
+
+const (
+	{{.FileName2}}_RELATIVE_PATH = constant.ROOT_PATH + "{{.FileRelavePath}}}"
+	{{.FileName2}}_BASE64_OR_CONTENT = `{{.Base64OrContent}}`
+)
+
+
+
+
+
+

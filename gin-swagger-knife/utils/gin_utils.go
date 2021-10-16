@@ -47,10 +47,14 @@ func GetJson(router *gin.Engine, relativePath string, json string) {
 	})
 }
 
-func GetJs(router *gin.Engine, relativePath string, content string) {
-	router.GET(relativePath, func(ctx *gin.Context) {
-		rs := []byte(content)
+func GetJs(router *gin.Engine, relativePath string, base64Content string) {
+	rs, err := base64.StdEncoding.DecodeString(base64Content)
+	if nil != err {
+		fmt.Println("err:", err)
+		return
+	}
 
+	router.GET(relativePath, func(ctx *gin.Context) {
 		ctx.Status(http.StatusOK)
 		ctx.Header("content-type", "application/javascript;charset=UTF-8")
 		ctx.Header("content-length", strconv.Itoa(len(rs)))

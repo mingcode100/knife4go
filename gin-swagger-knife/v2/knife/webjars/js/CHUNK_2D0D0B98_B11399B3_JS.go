@@ -1,0 +1,26 @@
+package js
+
+
+import (
+	"gin-swagger-knife/constant"
+	"gin-swagger-knife/utils"
+	"github.com/gin-gonic/gin"
+
+)
+
+func AddRouterOfChunk2d0d0b98B11399b3Js(router *gin.Engine) {
+    
+    utils.GetJs(router, CHUNK_2D0D0B98_B11399B3_JS_BASE64_OR_CONTENT, CHUNK_2D0D0B98_B11399B3_JS_RELATIVE_PATH)
+    
+}
+
+const (
+	CHUNK_2D0D0B98_B11399B3_JS_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/js/chunk-2d0d0b98.b11399b3.js}"
+	CHUNK_2D0D0B98_B11399B3_JS_BASE64_OR_CONTENT = `KHdpbmRvdy53ZWJwYWNrSnNvbnA9d2luZG93LndlYnBhY2tKc29ucHx8W10pLnB1c2goW1siY2h1bmstMmQwZDBiOTgiXSx7IjY4Y2MiOmZ1bmN0aW9uKG4sZSx0KXsidXNlIHN0cmljdCI7dC5yKGUpO3ZhciBzPXQoIjBlNTQiKSxyPXQubihzKTtyLmEuc2V0T3B0aW9ucyh7Z2ZtOiEwLHRhYmxlczohMCxicmVha3M6ITEscGVkYW50aWM6ITEsc2FuaXRpemU6ITEsc21hcnRMaXN0czohMCxzbWFydHlwYW50czohMX0pO3ZhciBhPXtuYW1lOiJNYXJrZG93biIscHJvcHM6e3NvdXJjZTp7dHlwZTpTdHJpbmd9fSxjb21wdXRlZDp7bWFya2Rvd25Tb3VyY2U6ZnVuY3Rpb24oKXtyZXR1cm4gcigpKHRoaXMuc291cmNlKX19fSxvPXQoIjI4NzciKSxjPU9iamVjdChvLmEpKGEsKGZ1bmN0aW9uKCl7dmFyIG49dGhpcyxlPW4uJGNyZWF0ZUVsZW1lbnQ7cmV0dXJuKG4uX3NlbGYuX2N8fGUpKCJkaXYiLHtzdGF0aWNDbGFzczoia25pZmU0ai1tYXJrZG93biIsZG9tUHJvcHM6e2lubmVySFRNTDpuLl9zKG4ubWFya2Rvd25Tb3VyY2UpfX0pfSksW10sITEsbnVsbCxudWxsLG51bGwpO2UuZGVmYXVsdD1jLmV4cG9ydHN9fV0pOw==`
+)
+
+
+
+
+
+

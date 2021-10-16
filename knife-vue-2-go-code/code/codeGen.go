@@ -1,15 +1,14 @@
-package templ
+package code
 
 import (
 	"encoding/base64"
 	"fmt"
-	"io"
 	"io/ioutil"
-	"text/template"
 	"knife-vue-2-go-code/utils"
 	"os"
 	"strconv"
 	"strings"
+	"text/template"
 )
 
 var i = 0
@@ -28,33 +27,44 @@ func ScanKnifeVueDist(dirPath string, relativePath string, packageName string, o
 
 	for _, f := range files {
 		if f.IsDir() {
-			ScanKnifeVueDist(dirPath+"/"+f.Name(), relativePath+"/"+f.Name(), f.Name(), outputPath+"/"+f.Name(), nil)
+			ScanKnifeVueDist(dirPath+"/"+f.Name(), relativePath+"/"+f.Name(), f.Name(), outputPath+"/"+f.Name(), knifeArgs)
 			continue
 		}
 
+		fname := strings.ReplaceAll(f.Name(), "@", "")
+
 		templArgs := DistFileTemplArgs{
 			PackageName: packageName,
-			//FileBase64:     getFileBase64(dirPath + "/" + f.Name()),
-			FilePath:       relativePath,
-			FileRelavePath: relativePath + "/" + f.Name(),
-			FileType:       getFileType(f.Name()),
-			FileName:       f.Name(),
-			FileName2:      getFileName2(f.Name()),
+			//Base64OrContent:     getFileBase64(dirPath + "/" + fname),
+			FileDir:        relativePath,
+			FileRelavePath: relativePath + "/" + fname,
+			FileType:       getFileType(fname),
+			FileName:       fname,
+			FileName2:      getFileName2(fname),
+			FileName3:      getFileName3(fname),
+		}
+
+		if templArgs.FileType == "html" || templArgs.FileType == "css" || templArgs.FileType == "md" || templArgs.FileType == "txt" {
+			templArgs.Base64OrContent = getFileContent(dirPath + "/" + f.Name())
+		} else {
+			templArgs.Base64OrContent = getFileBase64(dirPath + "/" + f.Name())
 		}
 
 		//fmt.Println("***********", templArgs.String())
 		makeDistGoFile(templArgs, outputPath)
-
-		//add2KnifeArgs(knifeArgs, templArgs)
+		//
+		add2KnifeArgs(knifeArgs, templArgs)
 
 	}
 }
 
 func add2KnifeArgs(args *KnifeArgs, args2 DistFileTemplArgs) {
 	importAlian := args2.PackageName
-	importPath := "gin-swagger-knife/knifefiles" + args2.FilePath
+	importPath := IMPORT_ROOT + args2.FileDir
 
-	fmt.Println(importAlian, " ", importPath)
+	//fmt.Println(importAlian, " ", importPath)
+
+	//解决包重名问题
 	v, ok := args.KnifeImport[importAlian]
 	if ok {
 		if v != importPath {
@@ -65,7 +75,10 @@ func add2KnifeArgs(args *KnifeArgs, args2 DistFileTemplArgs) {
 
 	args.KnifeImport[importAlian] = importPath
 
-	//append(args.KnifeLine, "")
+	args.Lines = append(args.Lines, KnifeLine{
+		FileName3:    args2.FileName3,
+		PackageAlian: importAlian,
+	})
 
 }
 
@@ -82,15 +95,13 @@ func makeDistGoFile(args DistFileTemplArgs, path string) {
 
 	defer f.Close()
 
-	tmpl, err := template.New("WEBJARS_TEMPL").Parse(WEBJARS_TEMPL)
+	tmpl, err := template.ParseFiles("./templ/webfile.go.tmpl")
 	if err != nil {
 		panic(err)
 	}
 
-	tmpl.Execute(os.Stdout,args)
-	//tmpl.Execute(f,args)
-
-	//io.WriteString(f, args.FileBase64)
+	//tmpl.Execute(os.Stdout, args)
+	tmpl.Execute(f, args)
 
 }
 
@@ -101,6 +112,25 @@ func getFileName2(fName string) string {
 	return strings.ToUpper(s)
 }
 
+func getFileName3(fName string) string {
+	s := strings.Replace(fName, ".", "_", -1)
+	s = strings.Replace(s, "-", "_", -1)
+	sarr := strings.Split(s, "_")
+
+	s1 := ""
+	for _, v := range sarr {
+		vv := []rune(v)
+		if len(vv) > 0 {
+			if vv[0] >= 'a' && vv[0] <= 'z' { //首字母大写
+				vv[0] -= 32
+			}
+			s1 += string(vv)
+		}
+	}
+
+	return s1
+}
+
 func getFileBase64(fpath string) string {
 	bytes, err := ioutil.ReadFile(fpath)
 	if nil != err {
@@ -109,6 +139,15 @@ func getFileBase64(fpath string) string {
 	}
 
 	return base64.StdEncoding.EncodeToString(bytes)
+}
+func getFileContent(fpath string) string {
+	bytes, err := ioutil.ReadFile(fpath)
+	if nil != err {
+		fmt.Errorf(" %s getFileBase64 error: %v", fpath, err)
+		return ""
+	}
+
+	return string(bytes)
 }
 
 func getFileType(fName string) string {
