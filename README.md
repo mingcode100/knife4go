@@ -12,7 +12,8 @@ knif4j地址：https://gitee.com/xiaoym/knife4j
 #### 模块说明
 | 模块        | 描述    |  
 | --------   | :-----   | 
-|  gin-swagger-knife   |  替换gin-swagger的界面实现(并非在原项目代码上修改)，供gin项目引用  |      
+|  gin-swagger-knife   |  替换gin-swagger的界面实现(并非在原项目代码上修改)，供gin项目引用  |  
+|  knife-vue-dist |  knife4j-vue项目打包后的dist目录内容，用于knife-vue-2-go-code中生成代码的逻辑  |    
 |  knife-vue-2-go-code   |  用于生成gin-swagger-knife中的代码，方便根据最新版本的knif4j升级界面  |      
 |  knife4go-example |  gin-swagger-knife 使用示例  |
 
