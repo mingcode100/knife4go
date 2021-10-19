@@ -2,8 +2,8 @@ package knife
 
 
 import (
-	"gin-swagger-knife/constant"
-	"gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
 	"github.com/gin-gonic/gin"
 
 )
@@ -11,6 +11,7 @@ import (
 
 const (
 	ROBOTS_TXT_RELATIVE_PATH = constant.ROOT_PATH + "/robots.txt"
+	// 文件内容的16进制表示
 	ROBOTS_TXT_HEX_CONTENT = `557365722d6167656e743a202a0d0a446973616c6c6f773a0d0a`
 )
 

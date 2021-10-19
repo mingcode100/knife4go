@@ -2,8 +2,8 @@ package {{.PackageName}}
 
 
 import (
-	"gin-swagger-knife/constant"
-	"gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
 	"github.com/gin-gonic/gin"
 
 )
@@ -11,6 +11,7 @@ import (
 
 const (
 	{{.FileName2}}_RELATIVE_PATH = constant.ROOT_PATH + "{{.FileRelavePath}}"
+	// 文件内容的16进制表示
 	{{.FileName2}}_HEX_CONTENT = `{{.HexContent}}`
 )
 

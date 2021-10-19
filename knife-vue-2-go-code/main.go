@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"knife-vue-2-go-code/code"
-	"knife-vue-2-go-code/utils"
+	"gitee.com/youbeiwuhuan/knife4go/knife-vue-2-go-code/code"
+	"gitee.com/youbeiwuhuan/knife4go/knife-vue-2-go-code/utils"
 	"os"
 	"text/template"
 )

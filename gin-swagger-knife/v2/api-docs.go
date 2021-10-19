@@ -1,8 +1,8 @@
 package v2
 
 import (
-	"gin-swagger-knife/constant"
-	"gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
 	"github.com/gin-gonic/gin"
 )
 

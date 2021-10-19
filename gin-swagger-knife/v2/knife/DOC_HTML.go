@@ -2,8 +2,8 @@ package knife
 
 
 import (
-	"gin-swagger-knife/constant"
-	"gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
 	"github.com/gin-gonic/gin"
 
 )
@@ -11,6 +11,7 @@ import (
 
 const (
 	DOC_HTML_RELATIVE_PATH = constant.ROOT_PATH + "/doc.html"
+	// 文件内容的16进制表示
 	DOC_HTML_HEX_CONTENT = `<!DOCTYPE html>
 <html lang="en">
 <head>

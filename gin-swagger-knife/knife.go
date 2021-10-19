@@ -1,18 +1,18 @@
 package knife
 
 import (
-	v2 "gin-swagger-knife/v2"
+	v2 "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2"
 	"github.com/gin-gonic/gin"
 	
-	css "gin-swagger-knife/v2/knife/webjars/css"
+	css "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2/knife/webjars/css"
 	
-	fonts "gin-swagger-knife/v2/knife/webjars/fonts"
+	fonts "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2/knife/webjars/fonts"
 	
-	img "gin-swagger-knife/v2/knife/webjars/img"
+	img "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2/knife/webjars/img"
 	
-	js "gin-swagger-knife/v2/knife/webjars/js"
+	js "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2/knife/webjars/js"
 	
-	knife "gin-swagger-knife/v2/knife"
+	knife "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2/knife"
 	
 )
 

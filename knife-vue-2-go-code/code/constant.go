@@ -7,5 +7,5 @@ const (
 	OUTPUT_PATH         = "../gin-swagger-knife/v2/knife"
 	ROOT_PACKAGE        = "knife"
 	ROOT_RELATE_PATH    = ""
-	IMPORT_ROOT         = "gin-swagger-knife/v2/knife"
+	IMPORT_ROOT         = "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2/knife"
 )
