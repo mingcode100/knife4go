@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
+	gin_swagger_knife "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife"
 )
 
 func main() {

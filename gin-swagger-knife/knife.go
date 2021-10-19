@@ -1,4 +1,4 @@
-package knife
+package gin_swagger_knife
 
 import (
 	v2 "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2"
