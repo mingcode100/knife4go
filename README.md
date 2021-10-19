@@ -35,6 +35,8 @@ knif4j地址：https://gitee.com/xiaoym/knife4j
 	
 	
 3.  gin 中初始化相关访问路径
+![image](https://gitee.com/youbeiwuhuan/knife4go/raw/master/img/example.png)
+
 ··· go
 	
 	import (
@@ -51,7 +53,7 @@ knif4j地址：https://gitee.com/xiaoym/knife4j
 	router.Run(":8080")
 ```
 
-![image](https://gitee.com/youbeiwuhuan/knife4go/raw/master/img/example.png)
+
 
 
 4. 访问
