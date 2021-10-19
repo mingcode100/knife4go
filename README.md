@@ -18,7 +18,7 @@ knif4j地址：https://gitee.com/xiaoym/knife4j
 
 
 #### 使用步骤
-- 1. 按照传统gin-swagger方式生成swagger.json,将内容拷贝到一个字符串中。
+- 1. 按照传统gin-swagger方式生成swagger.json,将内容拷贝到一个字符串中。关于gin-swagger的使用参考[gin-swagger生成API文档](https://www.cnblogs.com/zhzhlong/p/11800787.html) 或  [swaggo项目](https://github.com/swaggo/swag)
 	- 1.1 先下载cmd包，才能执行相关命令
 		go get -u github.com/swaggo/swag/cmd/swag
 		我开始没成功，后来进入$GOPATH/bin/ 目录执行go get github.com/swaggo/swag/cmd/swag ，在bin目录下生成一个swag.exe文件，把$GOPATH/bin/ 添加到Path环境变量才算成功
@@ -35,23 +35,23 @@ knif4j地址：https://gitee.com/xiaoym/knife4j
 	
 	
 - 3.  gin 中初始化相关访问路径
-![image](https://gitee.com/youbeiwuhuan/knife4go/raw/master/img/example.png)
+	![image](https://gitee.com/youbeiwuhuan/knife4go/raw/master/img/example.png)
 
-··· go
-	
-	import (
-		"fmt"
-		gin_swagger_knife "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife"
-		"github.com/gin-gonic/gin"
-	)
-	
-	router := gin.Default()
-	// 获取 swag int 命令生成的swagger.json文件里的内容
-	swaggerJson := "swagger.json的内容"
-	//初始化gin路径
-	gin_swagger_knife.InitSwaggerKnife(router,swaggerJson)
-	router.Run(":8080")
-```
+	``` go
+		
+		import (
+			"fmt"
+			gin_swagger_knife "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife"
+			"github.com/gin-gonic/gin"
+		)
+		
+		router := gin.Default()
+		// 获取 swag int 命令生成的swagger.json文件里的内容
+		swaggerJson := "swagger.json的内容"
+		//初始化gin路径
+		gin_swagger_knife.InitSwaggerKnife(router,swaggerJson)
+		router.Run(":8080")
+	```
 
 
 
