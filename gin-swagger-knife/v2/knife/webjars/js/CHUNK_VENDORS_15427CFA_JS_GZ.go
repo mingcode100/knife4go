@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfChunkVendors15427cfaJsGz(router *gin.Engine) {
     
-	utils.GetOther(router, CHUNK_VENDORS_15427CFA_JS_GZ_HEX_CONTENT, CHUNK_VENDORS_15427CFA_JS_GZ_RELATIVE_PATH)
+	utils.GetOther(router, CHUNK_VENDORS_15427CFA_JS_GZ_RELATIVE_PATH, CHUNK_VENDORS_15427CFA_JS_GZ_HEX_CONTENT)
 	
 }
 

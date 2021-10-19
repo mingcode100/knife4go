@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfIconfontDd63dc33Svg(router *gin.Engine) {
     
-	utils.GetOther(router, ICONFONT_DD63DC33_SVG_HEX_CONTENT, ICONFONT_DD63DC33_SVG_RELATIVE_PATH)
+	utils.GetOther(router, ICONFONT_DD63DC33_SVG_RELATIVE_PATH, ICONFONT_DD63DC33_SVG_HEX_CONTENT)
 	
 }
 

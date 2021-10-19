@@ -31,7 +31,7 @@ const (
 
 func AddRouterOfApp5a1f33deCss(router *gin.Engine) {
     
-    utils.GetCss(router, APP_5A1F33DE_CSS_HEX_CONTENT, APP_5A1F33DE_CSS_RELATIVE_PATH)
+    utils.GetCss(router, APP_5A1F33DE_CSS_RELATIVE_PATH, APP_5A1F33DE_CSS_HEX_CONTENT)
 	
 }
 

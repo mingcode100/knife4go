@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfApp5a1f33deCssGz(router *gin.Engine) {
     
-	utils.GetOther(router, APP_5A1F33DE_CSS_GZ_HEX_CONTENT, APP_5A1F33DE_CSS_GZ_RELATIVE_PATH)
+	utils.GetOther(router, APP_5A1F33DE_CSS_GZ_RELATIVE_PATH, APP_5A1F33DE_CSS_GZ_HEX_CONTENT)
 	
 }
 

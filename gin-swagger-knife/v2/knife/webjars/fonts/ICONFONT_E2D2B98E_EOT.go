@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfIconfontE2d2b98eEot(router *gin.Engine) {
     
-	utils.GetOther(router, ICONFONT_E2D2B98E_EOT_HEX_CONTENT, ICONFONT_E2D2B98E_EOT_RELATIVE_PATH)
+	utils.GetOther(router, ICONFONT_E2D2B98E_EOT_RELATIVE_PATH, ICONFONT_E2D2B98E_EOT_HEX_CONTENT)
 	
 }
 

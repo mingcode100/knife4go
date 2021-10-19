@@ -2,16 +2,16 @@ package main
 
 import (
 	"fmt"
+	gin_swagger_knife "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
-	gin_swagger_knife "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife"
 )
 
 func main() {
 	router := gin.Default()
 
 	swaggerJson := getFileContent("./swagger.json")
-
+	gin_swagger_knife.InitSwaggerKnife(router,swaggerJson)
 
 	router.Run(":8080")
 }

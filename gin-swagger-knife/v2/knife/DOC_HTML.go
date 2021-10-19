@@ -54,7 +54,7 @@ const (
 
 func AddRouterOfDocHtml(router *gin.Engine) {
     
-    utils.GetHtml(router, DOC_HTML_HEX_CONTENT, DOC_HTML_RELATIVE_PATH)
+    utils.GetHtml(router, DOC_HTML_RELATIVE_PATH, DOC_HTML_HEX_CONTENT)
     
 }
 

@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfChunk2d0bd799Ad1cba1cJs(router *gin.Engine) {
     
-    utils.GetJs(router, CHUNK_2D0BD799_AD1CBA1C_JS_HEX_CONTENT, CHUNK_2D0BD799_AD1CBA1C_JS_RELATIVE_PATH)
+    utils.GetJs(router, CHUNK_2D0BD799_AD1CBA1C_JS_RELATIVE_PATH, CHUNK_2D0BD799_AD1CBA1C_JS_HEX_CONTENT)
     
 }
 

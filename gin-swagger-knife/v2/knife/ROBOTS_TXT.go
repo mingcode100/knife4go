@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfRobotsTxt(router *gin.Engine) {
     
-	utils.GetOther(router, ROBOTS_TXT_HEX_CONTENT, ROBOTS_TXT_RELATIVE_PATH)
+	utils.GetOther(router, ROBOTS_TXT_RELATIVE_PATH, ROBOTS_TXT_HEX_CONTENT)
 	
 }
 

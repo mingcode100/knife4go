@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfFaviconIco(router *gin.Engine) {
     
-	utils.GetOther(router, FAVICON_ICO_HEX_CONTENT, FAVICON_ICO_RELATIVE_PATH)
+	utils.GetOther(router, FAVICON_ICO_RELATIVE_PATH, FAVICON_ICO_HEX_CONTENT)
 	
 }
 

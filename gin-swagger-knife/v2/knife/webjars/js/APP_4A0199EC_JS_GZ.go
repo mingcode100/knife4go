@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfApp4a0199ecJsGz(router *gin.Engine) {
     
-	utils.GetOther(router, APP_4A0199EC_JS_GZ_HEX_CONTENT, APP_4A0199EC_JS_GZ_RELATIVE_PATH)
+	utils.GetOther(router, APP_4A0199EC_JS_GZ_RELATIVE_PATH, APP_4A0199EC_JS_GZ_HEX_CONTENT)
 	
 }
 

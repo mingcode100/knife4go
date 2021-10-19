@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfLoading2x695405a9Gif(router *gin.Engine) {
     
-	utils.GetOther(router, LOADING2X_695405A9_GIF_HEX_CONTENT, LOADING2X_695405A9_GIF_RELATIVE_PATH)
+	utils.GetOther(router, LOADING2X_695405A9_GIF_RELATIVE_PATH, LOADING2X_695405A9_GIF_HEX_CONTENT)
 	
 }
 

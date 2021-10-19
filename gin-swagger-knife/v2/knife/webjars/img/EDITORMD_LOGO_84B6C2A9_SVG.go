@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfEditormdLogo84b6c2a9Svg(router *gin.Engine) {
     
-	utils.GetOther(router, EDITORMD_LOGO_84B6C2A9_SVG_HEX_CONTENT, EDITORMD_LOGO_84B6C2A9_SVG_RELATIVE_PATH)
+	utils.GetOther(router, EDITORMD_LOGO_84B6C2A9_SVG_RELATIVE_PATH, EDITORMD_LOGO_84B6C2A9_SVG_HEX_CONTENT)
 	
 }
 

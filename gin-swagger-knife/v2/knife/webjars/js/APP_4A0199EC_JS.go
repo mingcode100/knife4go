@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfApp4a0199ecJs(router *gin.Engine) {
     
-    utils.GetJs(router, APP_4A0199EC_JS_HEX_CONTENT, APP_4A0199EC_JS_RELATIVE_PATH)
+    utils.GetJs(router, APP_4A0199EC_JS_RELATIVE_PATH, APP_4A0199EC_JS_HEX_CONTENT)
     
 }
 

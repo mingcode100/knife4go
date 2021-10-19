@@ -17,7 +17,7 @@ const (
 
 func AddRouterOfREADMEMd(router *gin.Engine) {
     
-	utils.GetOther(router, README_MD_HEX_CONTENT, README_MD_RELATIVE_PATH)
+	utils.GetOther(router, README_MD_RELATIVE_PATH, README_MD_HEX_CONTENT)
 	
 }
 
