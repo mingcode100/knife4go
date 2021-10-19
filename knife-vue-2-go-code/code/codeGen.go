@@ -2,6 +2,7 @@ package code
 
 import (
 	"encoding/base64"
+	"encoding/hex"
 	"fmt"
 	"io/ioutil"
 	"knife-vue-2-go-code/utils"
@@ -35,7 +36,7 @@ func ScanKnifeVueDist(dirPath string, relativePath string, packageName string, o
 
 		templArgs := DistFileTemplArgs{
 			PackageName: packageName,
-			//Base64OrContent:     getFileBase64(dirPath + "/" + fname),
+			//HexContent:     getFileBase64(dirPath + "/" + fname),
 			FileDir:        relativePath,
 			FileRelavePath: relativePath + "/" + fname,
 			FileType:       getFileType(fname),
@@ -44,10 +45,10 @@ func ScanKnifeVueDist(dirPath string, relativePath string, packageName string, o
 			FileName3:      getFileName3(fname),
 		}
 
-		if templArgs.FileType == "html" || templArgs.FileType == "css" || templArgs.FileType == "md" || templArgs.FileType == "txt" {
-			templArgs.Base64OrContent = getFileContent(dirPath + "/" + f.Name())
+		if templArgs.FileType == "html" || templArgs.FileType == "css" {
+			templArgs.HexContent = getFileContent(dirPath + "/" + f.Name())
 		} else {
-			templArgs.Base64OrContent = getFileBase64(dirPath + "/" + f.Name())
+			templArgs.HexContent = getFileHexContent(dirPath + "/" + f.Name())
 		}
 
 		//fmt.Println("***********", templArgs.String())
@@ -140,6 +141,7 @@ func getFileBase64(fpath string) string {
 
 	return base64.StdEncoding.EncodeToString(bytes)
 }
+
 func getFileContent(fpath string) string {
 	bytes, err := ioutil.ReadFile(fpath)
 	if nil != err {
@@ -148,6 +150,16 @@ func getFileContent(fpath string) string {
 	}
 
 	return string(bytes)
+}
+
+func getFileHexContent(fpath string) string {
+	bytes, err := ioutil.ReadFile(fpath)
+	if nil != err {
+		fmt.Errorf(" %s getFileBase64 error: %v", fpath, err)
+		return ""
+	}
+
+	return hex.EncodeToString(bytes)
 }
 
 func getFileType(fName string) string {

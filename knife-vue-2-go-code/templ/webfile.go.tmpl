@@ -8,22 +8,24 @@ import (
 
 )
 
+
+const (
+	{{.FileName2}}_RELATIVE_PATH = constant.ROOT_PATH + "{{.FileRelavePath}}"
+	{{.FileName2}}_HEX_CONTENT = `{{.HexContent}}`
+)
+
 func AddRouterOf{{.FileName3}}(router *gin.Engine) {
     {{if eq .FileType "html"}}
-    utils.GetHtml(router, {{.FileName2}}_BASE64_OR_CONTENT, {{.FileName2}}_RELATIVE_PATH)
+    utils.GetHtml(router, {{.FileName2}}_HEX_CONTENT, {{.FileName2}}_RELATIVE_PATH)
     {{else if eq .FileType "js"}}
-    utils.GetJs(router, {{.FileName2}}_BASE64_OR_CONTENT, {{.FileName2}}_RELATIVE_PATH)
+    utils.GetJs(router, {{.FileName2}}_HEX_CONTENT, {{.FileName2}}_RELATIVE_PATH)
     {{else if eq .FileType "css"}}
-    utils.GetCss(router, {{.FileName2}}_BASE64_OR_CONTENT, {{.FileName2}}_RELATIVE_PATH)
+    utils.GetCss(router, {{.FileName2}}_HEX_CONTENT, {{.FileName2}}_RELATIVE_PATH)
 	{{else}}
-	utils.GetOther(router, {{.FileName2}}_BASE64_OR_CONTENT, {{.FileName2}}_RELATIVE_PATH)
+	utils.GetOther(router, {{.FileName2}}_HEX_CONTENT, {{.FileName2}}_RELATIVE_PATH)
 	{{end}}
 }
 
-const (
-	{{.FileName2}}_RELATIVE_PATH = constant.ROOT_PATH + "{{.FileRelavePath}}}"
-	{{.FileName2}}_BASE64_OR_CONTENT = `{{.Base64OrContent}}`
-)
 
 
 

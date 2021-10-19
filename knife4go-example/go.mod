@@ -1,4 +1,4 @@
-module knife4go-example
+module gitee.com/youbeiwuhuan/knife4go/knife4go-example
 
 go 1.15
 

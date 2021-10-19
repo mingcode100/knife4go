@@ -8,15 +8,10 @@ import (
 
 )
 
-func AddRouterOfDocHtml(router *gin.Engine) {
-    
-    utils.GetHtml(router, DOC_HTML_BASE64_OR_CONTENT, DOC_HTML_RELATIVE_PATH)
-    
-}
 
 const (
-	DOC_HTML_RELATIVE_PATH = constant.ROOT_PATH + "/doc.html}"
-	DOC_HTML_BASE64_OR_CONTENT = `<!DOCTYPE html>
+	DOC_HTML_RELATIVE_PATH = constant.ROOT_PATH + "/doc.html"
+	DOC_HTML_HEX_CONTENT = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -55,6 +50,13 @@ const (
 </html>
 `
 )
+
+func AddRouterOfDocHtml(router *gin.Engine) {
+    
+    utils.GetHtml(router, DOC_HTML_HEX_CONTENT, DOC_HTML_RELATIVE_PATH)
+    
+}
+
 
 
 

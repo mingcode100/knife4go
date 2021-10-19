@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"encoding/base64"
+	"encoding/hex"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
@@ -47,8 +47,8 @@ func GetJson(router *gin.Engine, relativePath string, json string) {
 	})
 }
 
-func GetJs(router *gin.Engine, relativePath string, base64Content string) {
-	rs, err := base64.StdEncoding.DecodeString(base64Content)
+func GetJs(router *gin.Engine, relativePath string, hexContent string) {
+	rs, err := hex.DecodeString(hexContent)
 	if nil != err {
 		fmt.Println("err:", err)
 		return
@@ -89,9 +89,9 @@ func GetCss(router *gin.Engine, relativePath string, content string) {
 	})
 }
 
-func GetOther(router *gin.Engine, relativePath string, base64Content string) {
+func GetOther(router *gin.Engine, relativePath string, hexContent string) {
 
-	rs, err := base64.StdEncoding.DecodeString(base64Content)
+	rs, err := hex.DecodeString(hexContent)
 	if nil != err {
 		fmt.Println("err:", err)
 		return

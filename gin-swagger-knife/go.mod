@@ -1,4 +1,4 @@
-module gin-swagger-knife
+module gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife
 
 go 1.15
 
