@@ -13,10 +13,11 @@ import (
 func main() {
 	router := gin.Default()
 	// 获取 swag int 命令生成的swagger.json文件里的内容
-	swaggerJson := getFileContent("./swagger.json")
+	//swaggerJson := getFileContent("./swagger.json")
+	swaggerJson := getFileContent("./open-api-v3.json")
 	fmt.Println(swaggerJson)
-	gin_swagger_knife.InitSwaggerKnife(router,swaggerJson)
-	router.GET("/hello",func(ctx *gin.Context) {
+	gin_swagger_knife.InitSwaggerKnife(router, swaggerJson)
+	router.GET("/hello", func(ctx *gin.Context) {
 		rs := []byte("dafafdasfaf")
 
 		ctx.Status(http.StatusOK)
@@ -35,7 +36,6 @@ func main() {
 
 	router.Run(":8080")
 }
-
 
 func getFileContent(fpath string) string {
 	bytes, err := ioutil.ReadFile(fpath)
