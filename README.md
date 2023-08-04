@@ -1,4 +1,4 @@
-# knife4go  （将用https://github.com/wI2L/fizz 来在新分支重构knife4go 解决 openapi3 的问题）
+# knife4go
 
 #### 项目调整中... （今年加班太多，维护缓慢，大家谅解）
 - 1. 将openapi3.0和swagger2.0的支持单独列分支,master将保持swagger2.0支持。解决现存的。
