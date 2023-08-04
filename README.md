@@ -1,4 +1,13 @@
-# knife4go
+# knife4go  （将用https://github.com/wI2L/fizz 来在新分支重构knife4go 解决 openapi3 的问题）
+
+#### 项目调整中... （今年加班太多，维护缓慢，大家谅解）
+- 1. 将openapi3.0和swagger2.0的支持单独列分支,master将保持swagger2.0支持。解决现存的。
+- 2. 解决现存openapi3.0支持bug。
+- 3. 拉新分支用https://github.com/wI2L/fizz 来适配knife4j的ui,不用再生成swagger.json。
+
+
+
+
 
 #### 介绍
 优化gin-swagger的界面,让knif4j适配go语言。感谢萧明。
