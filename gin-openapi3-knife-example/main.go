@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	gin_swagger_knife "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife"
+	gin_openapi3_knife "gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
 	"log"
@@ -16,7 +16,7 @@ func main() {
 	//swaggerJson := getFileContent("./swagger.json")
 	swaggerJson := getFileContent("./open-api-v3.json")
 	fmt.Println(swaggerJson)
-	gin_swagger_knife.InitSwaggerKnife(router, swaggerJson)
+	gin_openapi3_knife.InitSwaggerKnife(router, swaggerJson)
 	router.GET("/hello", func(ctx *gin.Context) {
 		rs := []byte("dafafdasfaf")
 
