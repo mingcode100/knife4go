@@ -1,13 +1,10 @@
 package js
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	CHUNK_2D0BD799_D2D95C02_JS_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/js/chunk-2d0bd799.d2d95c02.js"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfChunk2d0bd799D2d95c02Js(router *gin.Engine) {
-    
-    utils.GetJs(router, CHUNK_2D0BD799_D2D95C02_JS_RELATIVE_PATH, CHUNK_2D0BD799_D2D95C02_JS_HEX_CONTENT)
-    
+
+	utils.GetJs(router, CHUNK_2D0BD799_D2D95C02_JS_RELATIVE_PATH, CHUNK_2D0BD799_D2D95C02_JS_HEX_CONTENT)
+
 }
-
-
-
-
-
-
-

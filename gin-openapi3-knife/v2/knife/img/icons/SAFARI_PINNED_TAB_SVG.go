@@ -1,13 +1,10 @@
 package icons
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	SAFARI_PINNED_TAB_SVG_RELATIVE_PATH = constant.ROOT_PATH + "/img/icons/safari-pinned-tab.svg"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfSafariPinnedTabSvg(router *gin.Engine) {
-    
+
 	utils.GetOther(router, SAFARI_PINNED_TAB_SVG_RELATIVE_PATH, SAFARI_PINNED_TAB_SVG_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

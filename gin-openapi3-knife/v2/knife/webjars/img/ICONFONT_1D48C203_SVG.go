@@ -1,13 +1,10 @@
 package img
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	ICONFONT_1D48C203_SVG_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/img/iconfont.1d48c203.svg"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfIconfont1d48c203Svg(router *gin.Engine) {
-    
+
 	utils.GetOther(router, ICONFONT_1D48C203_SVG_RELATIVE_PATH, ICONFONT_1D48C203_SVG_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

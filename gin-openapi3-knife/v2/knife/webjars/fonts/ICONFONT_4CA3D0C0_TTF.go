@@ -1,13 +1,10 @@
 package fonts
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	ICONFONT_4CA3D0C0_TTF_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/fonts/iconfont.4ca3d0c0.ttf"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfIconfont4ca3d0c0Ttf(router *gin.Engine) {
-    
+
 	utils.GetOther(router, ICONFONT_4CA3D0C0_TTF_RELATIVE_PATH, ICONFONT_4CA3D0C0_TTF_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

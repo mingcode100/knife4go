@@ -1,13 +1,10 @@
 package icons
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	APPLE_TOUCH_ICON_76X76_PNG_RELATIVE_PATH = constant.ROOT_PATH + "/img/icons/apple-touch-icon-76x76.png"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfAppleTouchIcon76x76Png(router *gin.Engine) {
-    
+
 	utils.GetOther(router, APPLE_TOUCH_ICON_76X76_PNG_RELATIVE_PATH, APPLE_TOUCH_ICON_76X76_PNG_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

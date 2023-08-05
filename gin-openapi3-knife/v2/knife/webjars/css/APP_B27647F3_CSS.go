@@ -1,13 +1,10 @@
 package css
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	APP_B27647F3_CSS_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/css/app.b27647f3.css"
@@ -30,14 +27,7 @@ const (
 )
 
 func AddRouterOfAppB27647f3Css(router *gin.Engine) {
-    
-    utils.GetCss(router, APP_B27647F3_CSS_RELATIVE_PATH, APP_B27647F3_CSS_HEX_CONTENT)
-	
+
+	utils.GetCss(router, APP_B27647F3_CSS_RELATIVE_PATH, APP_B27647F3_CSS_HEX_CONTENT)
+
 }
-
-
-
-
-
-
-

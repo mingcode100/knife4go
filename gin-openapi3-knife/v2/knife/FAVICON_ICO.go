@@ -1,13 +1,10 @@
 package knife
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	FAVICON_ICO_RELATIVE_PATH = constant.ROOT_PATH + "/favicon.ico"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfFaviconIco(router *gin.Engine) {
-    
+
 	utils.GetOther(router, FAVICON_ICO_RELATIVE_PATH, FAVICON_ICO_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

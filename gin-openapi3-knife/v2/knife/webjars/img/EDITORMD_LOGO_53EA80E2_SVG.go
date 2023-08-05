@@ -1,13 +1,10 @@
 package img
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	EDITORMD_LOGO_53EA80E2_SVG_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/img/editormd-logo.53ea80e2.svg"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfEditormdLogo53ea80e2Svg(router *gin.Engine) {
-    
+
 	utils.GetOther(router, EDITORMD_LOGO_53EA80E2_SVG_RELATIVE_PATH, EDITORMD_LOGO_53EA80E2_SVG_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

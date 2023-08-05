@@ -1,13 +1,10 @@
 package oauth
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	OAUTH2_HTML_RELATIVE_PATH = constant.ROOT_PATH + "/oauth/oauth2.html"
@@ -107,14 +104,7 @@ $(function(){
 )
 
 func AddRouterOfOauth2Html(router *gin.Engine) {
-    
-    utils.GetHtml(router, OAUTH2_HTML_RELATIVE_PATH, OAUTH2_HTML_HEX_CONTENT)
-    
+
+	utils.GetHtml(router, OAUTH2_HTML_RELATIVE_PATH, OAUTH2_HTML_HEX_CONTENT)
+
 }
-
-
-
-
-
-
-

@@ -1,13 +1,10 @@
 package fonts
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	FONTAWESOME_WEBFONT_97493D3F_WOFF2_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/fonts/fontawesome-webfont.97493d3f.woff2"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfFontawesomeWebfont97493d3fWoff2(router *gin.Engine) {
-    
+
 	utils.GetOther(router, FONTAWESOME_WEBFONT_97493D3F_WOFF2_RELATIVE_PATH, FONTAWESOME_WEBFONT_97493D3F_WOFF2_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

@@ -1,13 +1,10 @@
 package knife
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	DOC_HTML_RELATIVE_PATH = constant.ROOT_PATH + "/doc.html"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfDocHtml(router *gin.Engine) {
-    
-    utils.GetHtml(router, DOC_HTML_RELATIVE_PATH, DOC_HTML_HEX_CONTENT)
-    
+
+	utils.GetHtml(router, DOC_HTML_RELATIVE_PATH, DOC_HTML_HEX_CONTENT)
+
 }
-
-
-
-
-
-
-

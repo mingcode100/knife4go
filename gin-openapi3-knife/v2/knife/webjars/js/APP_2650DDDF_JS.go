@@ -1,13 +1,10 @@
 package js
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	APP_2650DDDF_JS_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/js/app.2650dddf.js"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfApp2650dddfJs(router *gin.Engine) {
-    
-    utils.GetJs(router, APP_2650DDDF_JS_RELATIVE_PATH, APP_2650DDDF_JS_HEX_CONTENT)
-    
+
+	utils.GetJs(router, APP_2650DDDF_JS_RELATIVE_PATH, APP_2650DDDF_JS_HEX_CONTENT)
+
 }
-
-
-
-
-
-
-

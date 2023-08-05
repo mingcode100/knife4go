@@ -1,13 +1,10 @@
 package fonts
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
+	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
 )
-
 
 const (
 	ICONFONT_E2D2B98E_EOT_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/fonts/iconfont.e2d2b98e.eot"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfIconfontE2d2b98eEot(router *gin.Engine) {
-    
+
 	utils.GetOther(router, ICONFONT_E2D2B98E_EOT_RELATIVE_PATH, ICONFONT_E2D2B98E_EOT_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-
