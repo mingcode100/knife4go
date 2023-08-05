@@ -16,7 +16,7 @@ import (
 	
 	knife "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2/knife"
 	
-	oauth "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2/knife/webjars/oauth"
+	oauth "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2/knife/oauth"
 	
 )
 
@@ -26,6 +26,8 @@ func InitSwaggerKnife(router *gin.Engine, swaggerJson string) {
 	v2.AddSwaggerResourcesRouter(router)
     
         knife.AddRouterOfDocHtml(router)
+    
+        knife.AddRouterOfFaviconIco(router)
     
         icons.AddRouterOfAndroidChrome192x192Png(router)
     
@@ -53,17 +55,23 @@ func InitSwaggerKnife(router *gin.Engine, swaggerJson string) {
     
         icons.AddRouterOfSafariPinnedTabSvg(router)
     
-        css.AddRouterOfAppB27647f3Css(router)
+        oauth.AddRouterOfJqueryMinJs(router)
     
-        css.AddRouterOfAppB27647f3CssGz(router)
+        oauth.AddRouterOfJqueryMinJsGz(router)
     
-        css.AddRouterOfChunk296622eb20e6d994Css(router)
+        oauth.AddRouterOfOauth2Html(router)
     
-        css.AddRouterOfChunkD7d5f59cA9ffbfcbCss(router)
+        knife.AddRouterOfRobotsTxt(router)
     
-        css.AddRouterOfChunkVendorsF24a310aCss(router)
+        css.AddRouterOfAppB848c085Css(router)
     
-        css.AddRouterOfChunkVendorsF24a310aCssGz(router)
+        css.AddRouterOfAppB848c085CssGz(router)
+    
+        css.AddRouterOfChunk51277dbe57225f85Css(router)
+    
+        css.AddRouterOfChunkVendors3f2387deCss(router)
+    
+        css.AddRouterOfChunkVendors3f2387deCssGz(router)
     
         fonts.AddRouterOfFontawesomeWebfont706450d7Ttf(router)
     
@@ -77,11 +85,11 @@ func InitSwaggerKnife(router *gin.Engine, swaggerJson string) {
     
         fonts.AddRouterOfIconfontE2d2b98eEot(router)
     
-        img.AddRouterOfEditormdLogo53ea80e2Svg(router)
+        img.AddRouterOfEditormdLogo84b6c2a9Svg(router)
     
-        img.AddRouterOfFontawesomeWebfont29800836Svg(router)
+        img.AddRouterOfFontawesomeWebfont139e74e2Svg(router)
     
-        img.AddRouterOfIconfont1d48c203Svg(router)
+        img.AddRouterOfIconfontDd63dc33Svg(router)
     
         img.AddRouterOfLoadingC929501eGif(router)
     
@@ -89,33 +97,29 @@ func InitSwaggerKnife(router *gin.Engine, swaggerJson string) {
     
         img.AddRouterOfLoading3x65eacf61Gif(router)
     
-        js.AddRouterOfApp06135c03Js(router)
+        js.AddRouterOfApp2650dddfJs(router)
     
-        js.AddRouterOfApp06135c03JsGz(router)
+        js.AddRouterOfApp2650dddfJsGz(router)
     
-        js.AddRouterOfChunk069eb4372486111cJs(router)
+        js.AddRouterOfChunk069eb437371ae4fdJs(router)
     
-        js.AddRouterOfChunk069eb4372486111cJsLICENSETxt(router)
+        js.AddRouterOfChunk069eb437371ae4fdJsLICENSETxt(router)
     
-        js.AddRouterOfChunk069eb4372486111cJsGz(router)
-    
-        js.AddRouterOfChunk0d102d5a144e3deeJs(router)
-    
-        js.AddRouterOfChunk0d102d5a144e3deeJsGz(router)
+        js.AddRouterOfChunk069eb437371ae4fdJsGz(router)
     
         js.AddRouterOfChunk0fd67716D57e2c41Js(router)
     
         js.AddRouterOfChunk0fd67716D57e2c41JsGz(router)
     
-        js.AddRouterOfChunk296622ebE4e811f0Js(router)
+        js.AddRouterOfChunk2d0af44eC299c1d4Js(router)
     
-        js.AddRouterOfChunk296622ebE4e811f0JsGz(router)
+        js.AddRouterOfChunk2d0bd799Cc91c520Js(router)
     
-        js.AddRouterOfChunk2d0af44eEdce7802Js(router)
+        js.AddRouterOfChunk2d0d0b98Cb1dea78Js(router)
     
-        js.AddRouterOfChunk2d0bd799D2d95c02Js(router)
+        js.AddRouterOfChunk2d0da532Dd3c929cJs(router)
     
-        js.AddRouterOfChunk2d0da5320b13c746Js(router)
+        js.AddRouterOfChunk2d22269dBd9173e1Js(router)
     
         js.AddRouterOfChunk3b888a658737ce4fJs(router)
     
@@ -125,40 +129,32 @@ func InitSwaggerKnife(router *gin.Engine, swaggerJson string) {
     
         js.AddRouterOfChunk3ec4aaa8A79d19f8JsGz(router)
     
-        js.AddRouterOfChunk589faee0F3951d02Js(router)
+        js.AddRouterOfChunk51277dbeA577fa2fJs(router)
     
-        js.AddRouterOfChunk589faee0F3951d02JsLICENSETxt(router)
+        js.AddRouterOfChunk51277dbeA577fa2fJsLICENSETxt(router)
     
-        js.AddRouterOfChunk589faee0F3951d02JsGz(router)
+        js.AddRouterOfChunk51277dbeA577fa2fJsGz(router)
     
-        js.AddRouterOfChunk735c675cEcb8aa58Js(router)
+        js.AddRouterOfChunk589faee0B24e5f3dJs(router)
     
-        js.AddRouterOfChunk735c675cEcb8aa58JsGz(router)
+        js.AddRouterOfChunk589faee0B24e5f3dJsLICENSETxt(router)
     
-        js.AddRouterOfChunkAdb9e94455c41d5bJs(router)
+        js.AddRouterOfChunk589faee0B24e5f3dJsGz(router)
     
-        js.AddRouterOfChunkAdb9e94455c41d5bJsLICENSETxt(router)
+        js.AddRouterOfChunk735c675c76ef1019Js(router)
     
-        js.AddRouterOfChunkAdb9e94455c41d5bJsGz(router)
+        js.AddRouterOfChunk735c675c76ef1019JsGz(router)
     
-        js.AddRouterOfChunkD7d5f59c42190458Js(router)
+        js.AddRouterOfChunkAdb9e944B888f4bdJs(router)
     
-        js.AddRouterOfChunkD7d5f59c42190458JsLICENSETxt(router)
+        js.AddRouterOfChunkAdb9e944B888f4bdJsLICENSETxt(router)
     
-        js.AddRouterOfChunkD7d5f59c42190458JsGz(router)
+        js.AddRouterOfChunkAdb9e944B888f4bdJsGz(router)
     
-        js.AddRouterOfChunkF876db6c4965fec9Js(router)
+        js.AddRouterOfChunkVendors90e8ba20Js(router)
     
-        js.AddRouterOfChunkF876db6c4965fec9JsGz(router)
+        js.AddRouterOfChunkVendors90e8ba20JsLICENSETxt(router)
     
-        js.AddRouterOfChunkVendorsD59642c5Js(router)
-    
-        js.AddRouterOfChunkVendorsD59642c5JsLICENSETxt(router)
-    
-        js.AddRouterOfChunkVendorsD59642c5JsGz(router)
-    
-        oauth.AddRouterOfAxiosMinJs(router)
-    
-        oauth.AddRouterOfOauth2Html(router)
+        js.AddRouterOfChunkVendors90e8ba20JsGz(router)
     
 }
