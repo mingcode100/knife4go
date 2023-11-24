@@ -6,11 +6,509 @@
     },
     "servers": [
         {
-            "url": "http://127.0.0.1:8888",
+            "url": "http://127.0.0.1:8080",
             "description": "Generated server url"
         }
     ],
     "paths": {
+        "/body/bodyPut": {
+            "put": {
+                "tags": [
+                    "body参数"
+                ],
+                "summary": "普通body请求-put",
+                "operationId": "bodyPut",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FileResp"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{deviceId}/body": {
+            "post": {
+                "tags": [
+                    "用户模块"
+                ],
+                "summary": "body请求",
+                "operationId": "bodyRequest",
+                "parameters": [
+                    {
+                        "name": "deviceId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{deviceId}/body1": {
+            "post": {
+                "tags": [
+                    "用户模块"
+                ],
+                "summary": "body请求1",
+                "operationId": "bodyRequest1",
+                "parameters": [
+                    {
+                        "name": "deviceId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserSchema"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/getRequest1": {
+            "post": {
+                "tags": [
+                    "用户模块"
+                ],
+                "summary": "json参数查询1",
+                "operationId": "getRequest1",
+                "parameters": [
+                    {
+                        "name": "cade",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserSchema"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/createOne": {
+            "post": {
+                "tags": [
+                    "用户模块"
+                ],
+                "summary": "创建用户-createOne",
+                "description": "根据姓名创建用户1",
+                "operationId": "createOne",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/createOneSchema": {
+            "post": {
+                "tags": [
+                    "用户模块"
+                ],
+                "summary": "创建用户-Schema",
+                "description": "根据姓名创建用户1",
+                "operationId": "createOneSchema",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserSchema"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/createOne1": {
+            "post": {
+                "tags": [
+                    "用户模块"
+                ],
+                "summary": "创建用户1",
+                "description": "根据姓名创建用户1",
+                "operationId": "createOne1",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/file/upload": {
+            "post": {
+                "tags": [
+                    "文件上传"
+                ],
+                "summary": "单纯文件上传，无任何参数",
+                "description": "单纯文件上传",
+                "operationId": "upload",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/file/uploadParam": {
+            "post": {
+                "tags": [
+                    "文件上传"
+                ],
+                "summary": "文件上传-带参数",
+                "operationId": "uploadParam",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/file/uploadParamHeader": {
+            "post": {
+                "tags": [
+                    "文件上传"
+                ],
+                "summary": "文件上传-带参数Header",
+                "operationId": "uploadParamHeader",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/file/uploadParam/{id}": {
+            "post": {
+                "tags": [
+                    "文件上传"
+                ],
+                "summary": "文件上传-带参数Path",
+                "operationId": "uploadParamPath",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/file/uploadBatch": {
+            "post": {
+                "tags": [
+                    "文件上传"
+                ],
+                "summary": "多文件上传",
+                "operationId": "uploadBatch",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "files"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "files": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FileResp"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/enumValid": {
             "post": {
                 "tags": [
@@ -34,17 +532,7 @@
                         "content": {
                             "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/RespDataObject"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "*/*": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RespDataObject"
+                                    "$ref": "#/components/schemas/RespDataPersonDTO"
                                 }
                             }
                         }
@@ -52,12 +540,489 @@
                 }
             }
         },
-        "/version": {
+        "/body1/user": {
+            "post": {
+                "tags": [
+                    "aaa参数"
+                ],
+                "summary": "我是表单",
+                "operationId": "use",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body1/mo": {
+            "post": {
+                "tags": [
+                    "aaa参数"
+                ],
+                "summary": "枚举可用值",
+                "operationId": "mo",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MapEnumUser"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MapEnumUser"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body1/mo1": {
+            "post": {
+                "tags": [
+                    "aaa参数"
+                ],
+                "summary": "枚举可用值1",
+                "operationId": "mo1",
+                "parameters": [
+                    {
+                        "name": "mapEnumUser",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/MapEnumUser"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MapEnumUser"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body1/m1": {
+            "post": {
+                "tags": [
+                    "aaa参数"
+                ],
+                "summary": "枚举1",
+                "operationId": "m1",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuthenticationRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthenticationRequest"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body1/m12": {
+            "post": {
+                "tags": [
+                    "aaa参数"
+                ],
+                "summary": "枚举1-表单",
+                "operationId": "m21",
+                "parameters": [
+                    {
+                        "name": "request",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/AuthenticationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthenticationRequest"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body1/ee/body1": {
+            "post": {
+                "tags": [
+                    "aaa参数"
+                ],
+                "summary": "普通body请求3",
+                "operationId": "body",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FileResp"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body1/dd/body1": {
+            "post": {
+                "tags": [
+                    "aaa参数"
+                ],
+                "summary": "普通body请求2",
+                "operationId": "body23",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FileResp"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body1/cc/body1": {
+            "post": {
+                "tags": [
+                    "aaa参数"
+                ],
+                "summary": "普通body请求1",
+                "operationId": "body2",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FileResp"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body/body": {
+            "post": {
+                "tags": [
+                    "body参数"
+                ],
+                "summary": "普通body请求",
+                "operationId": "body_1",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FileResp"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body/bodyParam": {
+            "post": {
+                "tags": [
+                    "body参数"
+                ],
+                "summary": "普通body请求+Param",
+                "operationId": "bodyParam",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FileResp"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body/bodyParamHeader": {
+            "post": {
+                "tags": [
+                    "body参数"
+                ],
+                "summary": "普通body请求+Param+Header",
+                "operationId": "bodyParamHeader",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FileResp"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/body/bodyParamHeaderPath/{id}": {
+            "post": {
+                "tags": [
+                    "body参数"
+                ],
+                "summary": "普通body请求+Param+Header+Path",
+                "operationId": "bodyParamHeaderPath",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FileResp"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileResp"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/getRequest": {
             "get": {
                 "tags": [
-                    "version-controller"
+                    "用户模块"
                 ],
-                "operationId": "versionInformation",
+                "summary": "json参数查询",
+                "operationId": "getRequest",
+                "parameters": [
+                    {
+                        "name": "userSchema",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/UserSchema"
+                        }
+                    },
+                    {
+                        "name": "cade",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/create": {
+            "get": {
+                "tags": [
+                    "用户模块"
+                ],
+                "summary": "创建用户",
+                "description": "根据姓名创建用户",
+                "operationId": "create",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -68,123 +1033,61 @@
                                 }
                             }
                         }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "*/*": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RespDataObject"
-                                }
-                            }
-                        }
                     }
                 }
             }
         },
-        "/mask": {
+        "/job3/download": {
             "get": {
                 "tags": [
-                    "枚举演示"
+                    "文件下载1"
                 ],
-                "summary": "枚举扩展名称显示",
-                "operationId": "mask",
+                "operationId": "download",
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "content": {
-                            "*/*": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RespDataPersonDTO"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "*/*": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RespDataObject"
-                                }
-                            }
-                        }
+                        "description": "OK"
                     }
                 }
             }
         },
-        "/enumName": {
+        "/download/xlsx": {
             "get": {
                 "tags": [
-                    "枚举演示"
+                    "文件下载"
                 ],
-                "summary": "枚举名称显示",
-                "operationId": "enumName",
+                "summary": "下载excel文件",
+                "operationId": "pdf",
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "content": {
-                            "*/*": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RespDataPersonDTO"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "*/*": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RespDataObject"
-                                }
-                            }
-                        }
+                        "description": "OK"
                     }
                 }
             }
         },
-        "/emumList": {
+        "/download/text": {
             "get": {
                 "tags": [
-                    "枚举演示"
+                    "文件下载"
                 ],
-                "summary": "查询枚举下拉框",
-                "operationId": "emumList",
-                "parameters": [
-                    {
-                        "name": "enumId",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "HobyEnum"
-                        }
-                    }
-                ],
+                "summary": "下载txt文件",
+                "operationId": "text",
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "content": {
-                            "*/*": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/CodeTextEnumView"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "*/*": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RespDataObject"
-                                }
-                            }
-                        }
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/download/image": {
+            "get": {
+                "tags": [
+                    "文件下载"
+                ],
+                "summary": "图片预览",
+                "operationId": "image",
+                "responses": {
+                    "200": {
+                        "description": "OK"
                     }
                 }
             }
@@ -192,58 +1095,125 @@
     },
     "components": {
         "schemas": {
-            "RespDataObject": {
+            "FileResp": {
+                "required": [
+                    "random",
+                    "size"
+                ],
                 "type": "object",
                 "properties": {
-                    "code": {
-                        "type": "integer",
-                        "description": "状态码；1-成功，0-失败，-1-重新登录",
-                        "format": "int32"
-                    },
-                    "msg": {
+                    "random": {
                         "type": "string",
-                        "description": "错误描述"
+                        "description": "随机名称"
                     },
-                    "debugInfo": {
-                        "type": "string"
+                    "name": {
+                        "type": "string",
+                        "description": "文件名称"
                     },
-                    "data": {
-                        "type": "object",
-                        "description": "返回数据"
-                    },
-                    "failed": {
-                        "type": "boolean"
-                    },
-                    "reLogin": {
-                        "type": "boolean"
+                    "size": {
+                        "type": "integer",
+                        "description": "文件大小",
+                        "format": "int64"
                     },
                     "success": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "是否上传成功"
+                    }
+                },
+                "description": "文件对象"
+            },
+            "PartSchema": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "part部分id"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "part部分名称"
+                    }
+                },
+                "description": "Part信息"
+            },
+            "UserSchema": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "主键id"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "名称"
+                    },
+                    "partSchema": {
+                        "$ref": "#/components/schemas/PartSchema"
+                    }
+                },
+                "description": "用户信息"
+            },
+            "User": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "主键id"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "名称"
                     }
                 }
             },
             "PersonDTO": {
+                "required": [
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "姓名",
                         "refType": null
                     },
                     "age": {
                         "type": "integer",
+                        "description": "年龄",
                         "format": "int32",
                         "refType": null
                     },
                     "birthday": {
                         "type": "string",
+                        "description": "生日",
                         "format": "date-time",
                         "refType": null
                     },
                     "hoby": {
                         "type": "string",
+                        "description": "爱好,对应的出参名称字段为hoby_label(若为入参不需要传),枚举值说明:football-足球,basketball-篮球",
+                        "refType": null
+                    },
+                    "hoby2": {
+                        "type": "string",
+                        "description": "爱好2",
+                        "enum": [
+                            "football",
+                            "basketball"
+                        ],
                         "refType": null
                     }
-                }
+                },
+                "description": "个人信息"
             },
             "RespDataPersonDTO": {
                 "type": "object",
@@ -258,32 +1228,74 @@
                         "description": "错误描述"
                     },
                     "debugInfo": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "调试的提示"
                     },
                     "data": {
                         "$ref": "#/components/schemas/PersonDTO"
+                    },
+                    "success": {
+                        "type": "boolean"
                     },
                     "failed": {
                         "type": "boolean"
                     },
                     "reLogin": {
                         "type": "boolean"
-                    },
-                    "success": {
-                        "type": "boolean"
                     }
                 }
             },
-            "CodeTextEnumView": {
+            "MapEnumUser": {
+                "required": [
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
-                    "label": {
-                        "type": "string"
+                    "name": {
+                        "type": "string",
+                        "description": "姓名"
                     },
-                    "value": {
-                        "type": "string"
+                    "courseType": {
+                        "type": "string",
+                        "description": "枚举类型",
+                        "enum": [
+                            "102:图文",
+                            "103:音频",
+                            "104:视频",
+                            "105:外链"
+                        ]
                     }
                 }
+            },
+            "AuthenticationRequest": {
+                "required": [
+                    "username"
+                ],
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "description": "用户账户",
+                        "example": "ssadmin"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "用户密码",
+                        "example": "test123"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "账户类型",
+                        "example": "BACKEND_SUPER_ADMIN",
+                        "enum": [
+                            "USER",
+                            "BACKEND",
+                            "BACKEND_ADMIN",
+                            "BACKEND_SUPER_ADMIN"
+                        ]
+                    }
+                },
+                "description": "账户登陆请求参数"
             }
         }
     },
