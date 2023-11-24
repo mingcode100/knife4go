@@ -1,7 +1,7 @@
 package knife
 
 import (
-	v2 "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/v2"
+	v3 "gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/v3"
 	"github.com/gin-gonic/gin"
 	{{range $k,$v := .KnifeImport}}
 	{{$k}} "{{$v}}"
@@ -10,8 +10,8 @@ import (
 
 //@param content string swag int 命令生成的swagger.json文件里的内容
 func InitSwaggerKnife(router *gin.Engine, swaggerJson string) {
-	v2.AddApiDocRouter(router, swaggerJson)
-	v2.AddSwaggerResourcesRouter(router)
+	v3.AddApiDocRouter(router, swaggerJson)
+	v3.AddSwaggerResourcesRouter(router)
     {{range $i,$v := .Lines}}
         {{$v.PackageAlian}}.AddRouterOf{{$v.FileName3}}(router)
     {{end}}
