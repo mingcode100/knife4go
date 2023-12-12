@@ -8,7 +8,7 @@ import (
 
 const (
 	// TODO 路径要改
-	API_DOCS_RELATIVE_PATH = constant.ROOT_PATH + "/v2/api-docs"
+	API_DOCS_RELATIVE_PATH = constant.ROOT_PATH + "/v3/api-docs"
 )
 
 // @param content string swag int 命令生成的swagger.json文件里的内容

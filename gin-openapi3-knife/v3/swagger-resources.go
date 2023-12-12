@@ -8,10 +8,10 @@ import (
 
 const (
 	// TODO 路径要改
-	SWAGGER_RESOURCES_CONTENT       = `[{"location":"/v2/api-docs?group=2.X版本","name":"2.X版本","swaggerVersion":"2.0","url":"/v2/api-docs?group=2.X版本"}]`
-	SWAGGER_RESOURCES_RELATIVE_PATH = constant.ROOT_PATH + "/swagger-resources"
+	SWAGGER_RESOURCES_CONTENT     = `{"configUrl": "/v3/api-docs/swagger-config","oauth2RedirectUrl": "` + constant.ROOT_PATH + `/swagger-ui/oauth2-redirect.html","url": "/v3/api-docs","validatorUrl": ""}`
+	SWAGGER_RESOURCES_CONFIG_PATH = constant.ROOT_PATH + "/swagger-config"
 )
 
 func AddSwaggerResourcesRouter(router *gin.Engine) {
-	utils.GetJson(router, SWAGGER_RESOURCES_RELATIVE_PATH, SWAGGER_RESOURCES_CONTENT)
+	utils.GetJson(router, SWAGGER_RESOURCES_CONFIG_PATH, SWAGGER_RESOURCES_CONTENT)
 }
