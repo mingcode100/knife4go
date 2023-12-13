@@ -1,0 +1,293 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8888",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/enumValid": {
+            "post": {
+                "tags": [
+                    "枚举演示"
+                ],
+                "summary": "枚举校验",
+                "operationId": "enumValid",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PersonDTO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RespDataObject"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RespDataObject"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/version": {
+            "get": {
+                "tags": [
+                    "version-controller"
+                ],
+                "operationId": "versionInformation",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RespDataObject"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/mask": {
+            "get": {
+                "tags": [
+                    "枚举演示"
+                ],
+                "summary": "枚举扩展名称显示",
+                "operationId": "mask",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RespDataPersonDTO"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RespDataObject"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enumName": {
+            "get": {
+                "tags": [
+                    "枚举演示"
+                ],
+                "summary": "枚举名称显示",
+                "operationId": "enumName",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RespDataPersonDTO"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RespDataObject"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/emumList": {
+            "get": {
+                "tags": [
+                    "枚举演示"
+                ],
+                "summary": "查询枚举下拉框",
+                "operationId": "emumList",
+                "parameters": [
+                    {
+                        "name": "enumId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "HobyEnum"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CodeTextEnumView"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RespDataObject"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "RespDataObject": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "description": "状态码；1-成功，0-失败，-1-重新登录",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "description": "错误描述"
+                    },
+                    "debugInfo": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "object",
+                        "description": "返回数据"
+                    },
+                    "failed": {
+                        "type": "boolean"
+                    },
+                    "reLogin": {
+                        "type": "boolean"
+                    },
+                    "success": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "PersonDTO": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "refType": null
+                    },
+                    "age": {
+                        "type": "integer",
+                        "format": "int32",
+                        "refType": null
+                    },
+                    "birthday": {
+                        "type": "string",
+                        "format": "date-time",
+                        "refType": null
+                    },
+                    "hoby": {
+                        "type": "string",
+                        "refType": null
+                    }
+                }
+            },
+            "RespDataPersonDTO": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "description": "状态码；1-成功，0-失败，-1-重新登录",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "description": "错误描述"
+                    },
+                    "debugInfo": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/PersonDTO"
+                    },
+                    "failed": {
+                        "type": "boolean"
+                    },
+                    "reLogin": {
+                        "type": "boolean"
+                    },
+                    "success": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "CodeTextEnumView": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "x-openapi": {
+        "x-markdownFiles": []
+    }
+}
