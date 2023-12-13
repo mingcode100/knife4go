@@ -1,6 +1,6 @@
 # knife4go
 
-#### 项目调整中... （今年加班太多，维护缓慢，大家谅解）
+#### 项目调整中... （今年加班太多，维护缓慢，大家谅解）（gin-openapi3-knife项目example目录下main.go已经可以跑起来,版本号还有点问题）
 - 1. 将openapi3.0和swagger2.0的支持单独列分支,master将保持swagger2.0支持。解决现存的。
 - 2. 解决现存openapi3.0支持bug。
 - 3. 拉新分支用https://github.com/wI2L/fizz 来适配knife4j的ui,不用再生成swagger.json。
@@ -19,20 +19,20 @@ knif4j地址：https://gitee.com/xiaoym/knife4j
 
 
 #### 模块说明
-| 模块                         | 描述                                                                    |  
-|----------------------------|:----------------------------------------------------------------------| 
-| gin-swagger-knife          | 替换gin-swagger的界面实现(并非在原项目代码上修改)，供gin项目引用 (适用于swagger2)                |  
-| gin-openapi3-knife         | 替换gin-swagger的界面实现(并非在原项目代码上修改)，供gin项目引用 (适用于openapi3)                |  
-| fizz-knife                 | 替换fizz的界面实现(并非在原项目代码上修改)，供gin项目引用 (基于fizz展示openapi3,不需要用swagger.json) |  
-| knife-vue-dist             | knife4j-vue项目打包后的dist目录内容，用于knife-vue-2-go-code中生成代码的逻辑               |    
-| knife-vue-2-go-code        | 用于生成gin-swagger-knife中的代码，方便根据最新版本的knif4j升级界面                         |      
-| knife4go-example           | gin-swagger-knife 使用示例（废弃）                                            |
-| gin-swagger-knife-example  | gin-swagger-knife 使用示例                                                |
-| gin-openapi3-knife-example | gin-openapi3-knife 使用示例                                               |
-| fizz-knife-example         | fizz-knife 使用示例                                                       |
+| 模块                         | 描述                                                                                                                       |  
+|----------------------------|:-------------------------------------------------------------------------------------------------------------------------| 
+| gin-swagger-knife          | 替换gin-swagger的界面实现(并非在原项目代码上修改)，供gin项目引用 (适用于swagger2)                                                                   |  
+| gin-openapi3-knife         | 替换gin-swagger的界面实现(并非在原项目代码上修改)，供gin项目引用 (适用于openapi3),示例在当前项目example目录下main.go,访问地址http://127.0.0.1:8080/knife/doc.html |  
+| fizz-knife                 | 替换fizz的界面实现(并非在原项目代码上修改)，供gin项目引用 (基于fizz展示openapi3,不需要用swagger.json)                                                    |  
+| knife-vue-dist             | knife4j-vue项目打包后的dist目录内容，用于knife-vue-2-go-code中生成代码的逻辑                                                                  |    
+| knife-vue-2-go-code        | 用于生成gin-swagger-knife中的前端文件接口代码（knife目录下代码），方便根据最新版本的knif4j升级界面                                                          |      
+| knife-openapi3-go-code     | 用于生成gin-openapi3-knife中的前端文件接口代码（knife目录下代码），方便根据最新版本的knif4j升级界面                                                         |      
+| gin-swagger-knife-example  | gin-swagger-knife 使用示例                                                                                                   |
+| gin-openapi3-knife-example | gin-openapi3-knife 使用示例 ，暂时跑不起来,依赖 gin-openapi3-knife 版本号有问题，在想办法调整版本号,可以先跑  gin-openapi3-knife下例子                       |
+| fizz-knife-example         | fizz-knife 使用示例                                                                                                          |
 
 
-#### 使用步骤
+#### 使用步骤 （gin-openapi3-knife 与之相同，只换依赖包即可）
 - 1. 按照传统gin-swagger方式生成swagger.json,将内容拷贝到一个字符串中。关于gin-swagger的使用参考[gin-swagger生成API文档](https://www.cnblogs.com/zhzhlong/p/11800787.html) 或  [swaggo项目](https://github.com/swaggo/swag)
 	- 1.1 先下载cmd包，才能执行相关命令
 		go get -u github.com/swaggo/swag/cmd/swag
