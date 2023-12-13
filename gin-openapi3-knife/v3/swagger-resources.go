@@ -1,4 +1,4 @@
-package v2
+package v3
 
 import (
 	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"

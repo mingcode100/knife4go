@@ -15,8 +15,10 @@ func main() {
 		Lines:       make([]code.KnifeLine, 0, 100),
 	}
 
+	fmt.Println("==================================开始生成knife-openapi3代码")
 	code.ScanKnifeVueDist(code.KNIFE_VUE_DIST_PATH, code.ROOT_RELATE_PATH, code.ROOT_PACKAGE, code.OUTPUT_PATH, knifeArgs)
 	makeKnifeFile(knifeArgs, code.KNIFE_GO_PATH)
+	fmt.Println("==================================生成完成")
 
 }
 
