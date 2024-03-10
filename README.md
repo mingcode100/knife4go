@@ -1,6 +1,6 @@
 # knife4go
 
-#### 项目调整中... （今年加班太多，维护缓慢，大家谅解）
+#### fizz适配已经成功，可以采用硬编码替代swagger注解，且不用生成swagger.json （今年加班太多，维护缓慢，大家谅解）
 - 1. 将openapi3.0和swagger2.0的支持单独列分支,master将保持swagger2.0支持。解决现存的。
 - 2. 解决现存openapi3.0支持bug。
 - 3. 拉新分支用https://github.com/wI2L/fizz 来适配knife4j的ui,不用再生成swagger.json。
