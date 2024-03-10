@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	fizz_knife "gitee.com/youbeiwuhuan/knife4go/fizz-knife"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/juju/errors"
@@ -44,6 +43,8 @@ func NewRouter() (*fizz.Fizz, error) {
 	engine := gin.New()
 	engine.Use(cors.Default())
 
+	fizz := fizz.NewFromEngine(engine)
+
 	// Override type names.
 	// fizz.Generator().OverrideTypeName(reflect.TypeOf(Fruit{}), "SweetFruit")
 
@@ -56,10 +57,12 @@ func NewRouter() (*fizz.Fizz, error) {
 		Version:     "1.0.0",
 	}
 
-	fizz := fizz_knife.InitSwaggerKnife(engine, infos)
+	// 这里  fizz.OpenAPI(infos, "json") 就是open-api-v3.json 内容。正好可以结合knif4j的open-api-v3界面来适配
+	// Create a new route that serve the OpenAPI spec.
+	fizz.GET("/openapi.json", nil, fizz.OpenAPI(infos, "json"))
 
 	// Setup routes.
-	routes(fizz.Group("/market", "market超市", "Your daily dose of freshness"))
+	routes(fizz.Group("/market", "market", "Your daily dose of freshness"))
 
 	if len(fizz.Errors()) != 0 {
 		return nil, fmt.Errorf("fizz errors: %v", fizz.Errors())

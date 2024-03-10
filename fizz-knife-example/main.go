@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	fizz_knife "gitee.com/youbeiwuhuan/knife4go/fizz-knife"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/juju/errors"
@@ -16,9 +17,9 @@ import (
 
 // Fruit represents a sweet, fresh fruit.
 type Fruit struct {
-	Name    string    `json:"name" validate:"required" example:"banana"`
-	Origin  string    `json:"origin" validate:"required" description:"Country of origin of the fruit" enum:"ecuador,france,senegal,china,spain"`
-	Price   float64   `json:"price" validate:"required" description:"Price in euros" example:"5.13"`
+	Name    string    `json:"name" validate:"required" description:"名称" example:"banana"`
+	Origin  string    `json:"origin" validate:"required" description:"水果的出产国家" enum:"ecuador,france,senegal,china,spain"`
+	Price   float64   `json:"price" validate:"required" description:"价格" example:"5.13"`
 	AddedAt time.Time `json:"-" binding:"-" description:"Date of addition of the fruit to the market"`
 }
 
@@ -43,8 +44,6 @@ func NewRouter() (*fizz.Fizz, error) {
 	engine := gin.New()
 	engine.Use(cors.Default())
 
-	fizz := fizz.NewFromEngine(engine)
-
 	// Override type names.
 	// fizz.Generator().OverrideTypeName(reflect.TypeOf(Fruit{}), "SweetFruit")
 
@@ -52,17 +51,15 @@ func NewRouter() (*fizz.Fizz, error) {
 	// the API that will be served with
 	// the specification.
 	infos := &openapi.Info{
-		Title:       "Fruits Market",
-		Description: `This is a sample Fruits market server.`,
+		Title:       "Fruits Market水果超市",
+		Description: `This is a sample Fruits market server.  水果超市接口`,
 		Version:     "1.0.0",
 	}
 
-	// 这里  fizz.OpenAPI(infos, "json") 就是open-api-v3.json 内容。正好可以结合knif4j的open-api-v3界面来适配
-	// Create a new route that serve the OpenAPI spec.
-	fizz.GET("/openapi.json", nil, fizz.OpenAPI(infos, "json"))
+	fizz := fizz_knife.InitSwaggerKnife(engine, infos)
 
 	// Setup routes.
-	routes(fizz.Group("/market", "market", "Your daily dose of freshness"))
+	routes(fizz.Group("/market", "超市接口", "Your daily dose of freshness，你的描述"))
 
 	if len(fizz.Errors()) != 0 {
 		return nil, fmt.Errorf("fizz errors: %v", fizz.Errors())
@@ -73,7 +70,7 @@ func NewRouter() (*fizz.Fizz, error) {
 func routes(grp *fizz.RouterGroup) {
 	// Add a new fruit to the market.
 	grp.POST("", []fizz.OperationOption{
-		fizz.Summary("Add a fruit to the market"),
+		fizz.Summary("给市场添加一个水果"),
 		fizz.Response("400", "Bad request", nil, nil,
 			map[string]interface{}{"error": "fruit already exists"},
 		),
@@ -82,7 +79,7 @@ func routes(grp *fizz.RouterGroup) {
 	// Remove a fruit from the market,
 	// probably because it rotted.
 	grp.DELETE("/:name", []fizz.OperationOption{
-		fizz.Summary("Remove a fruit from the market"),
+		fizz.Summary("从市场删除一个水果"),
 		fizz.ResponseWithExamples("400", "Bad request", nil, nil, map[string]interface{}{
 			"fruitNotFound": map[string]interface{}{"error": "fruit not found"},
 			"invalidApiKey": map[string]interface{}{"error": "invalid api key"},
@@ -91,7 +88,7 @@ func routes(grp *fizz.RouterGroup) {
 
 	// List all available fruits.
 	grp.GET("", []fizz.OperationOption{
-		fizz.Summary("List the fruits of the market"),
+		fizz.Summary("水果列表"),
 		fizz.Response("400", "Bad request", nil, nil, nil),
 		fizz.Header("X-Market-Listing-Size", "Listing size", fizz.Long),
 	}, tonic.Handler(ListFruits, 200))
