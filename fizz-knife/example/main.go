@@ -2,47 +2,134 @@ package main
 
 import (
 	"fmt"
-	gin_openapi3_knife "gitee.com/youbeiwuhuan/knife4go/fizz-knife"
+	fizz_knife "gitee.com/youbeiwuhuan/knife4go/fizz-knife"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"io/ioutil"
+	"github.com/juju/errors"
+	"github.com/loopfz/gadgeto/tonic"
+	"github.com/wI2L/fizz"
+	"github.com/wI2L/fizz/openapi"
 	"log"
 	"net/http"
 	"strconv"
+	"time"
 )
 
-func main() {
-	router := gin.Default()
-	// 获取 swag int 命令生成的swagger.json文件里的内容
-	//swaggerJson := getFileContent("./swagger.json")
-	swaggerJson := getFileContent("./open-api-v3.json")
-	fmt.Println(swaggerJson)
-	gin_openapi3_knife.InitSwaggerKnife(router, swaggerJson)
-	router.GET("/hello", func(ctx *gin.Context) {
-		rs := []byte("dafafdasfaf")
-
-		ctx.Status(http.StatusOK)
-		ctx.Header("content-type", "application/json;charset=UTF-8")
-		ctx.Header("content-length", strconv.Itoa(len(rs)))
-		ctx.Header("connection", "keep-alive")
-
-		_, err := ctx.Writer.Write(rs)
-		if nil != err {
-			log.Fatal(err)
-			return
-		}
-
-		ctx.Writer.Flush()
-	})
-
-	router.Run(":8080")
+// Fruit represents a sweet, fresh fruit.
+type Fruit struct {
+	Name    string    `json:"name" validate:"required" example:"banana"`
+	Origin  string    `json:"origin" validate:"required" description:"Country of origin of the fruit" enum:"ecuador,france,senegal,china,spain"`
+	Price   float64   `json:"price" validate:"required" description:"Price in euros" example:"5.13"`
+	AddedAt time.Time `json:"-" binding:"-" description:"Date of addition of the fruit to the market"`
 }
 
-func getFileContent(fpath string) string {
-	bytes, err := ioutil.ReadFile(fpath)
-	if nil != err {
-		fmt.Errorf(" %s getFileBase64 error: %v", fpath, err)
-		return ""
+// TypeName implements openapi.Typer interface for Fruit.
+func (f *Fruit) TypeName() string { return "RottenFruit" }
+
+func main() {
+	router, err := NewRouter()
+	if err != nil {
+		log.Fatal(err)
+	}
+	srv := &http.Server{
+		Addr:    ":8080",
+		Handler: router,
+	}
+	srv.ListenAndServe()
+}
+
+// NewRouter returns a new router for the
+// Pet Store.
+func NewRouter() (*fizz.Fizz, error) {
+	engine := gin.New()
+	engine.Use(cors.Default())
+
+	// Override type names.
+	// fizz.Generator().OverrideTypeName(reflect.TypeOf(Fruit{}), "SweetFruit")
+
+	// Initialize the informations of
+	// the API that will be served with
+	// the specification.
+	infos := &openapi.Info{
+		Title:       "Fruits Market",
+		Description: `This is a sample Fruits market server.`,
+		Version:     "1.0.0",
 	}
 
-	return string(bytes)
+	fizz := fizz_knife.InitSwaggerKnife(engine, infos)
+
+	// Setup routes.
+	routes(fizz.Group("/market", "market", "Your daily dose of freshness"))
+
+	if len(fizz.Errors()) != 0 {
+		return nil, fmt.Errorf("fizz errors: %v", fizz.Errors())
+	}
+	return fizz, nil
+}
+
+func routes(grp *fizz.RouterGroup) {
+	// Add a new fruit to the market.
+	grp.POST("", []fizz.OperationOption{
+		fizz.Summary("Add a fruit to the market"),
+		fizz.Response("400", "Bad request", nil, nil,
+			map[string]interface{}{"error": "fruit already exists"},
+		),
+	}, tonic.Handler(CreateFruit, 200))
+
+	// Remove a fruit from the market,
+	// probably because it rotted.
+	grp.DELETE("/:name", []fizz.OperationOption{
+		fizz.Summary("Remove a fruit from the market"),
+		fizz.ResponseWithExamples("400", "Bad request", nil, nil, map[string]interface{}{
+			"fruitNotFound": map[string]interface{}{"error": "fruit not found"},
+			"invalidApiKey": map[string]interface{}{"error": "invalid api key"},
+		}),
+	}, tonic.Handler(DeleteFruit, 204))
+
+	// List all available fruits.
+	grp.GET("", []fizz.OperationOption{
+		fizz.Summary("List the fruits of the market"),
+		fizz.Response("400", "Bad request", nil, nil, nil),
+		fizz.Header("X-Market-Listing-Size", "Listing size", fizz.Long),
+	}, tonic.Handler(ListFruits, 200))
+}
+
+// FruitIdentityParams represents the parameters that
+// are required to identity a unique fruit in the market.
+type FruitIdentityParams struct {
+	Name   string `path:"name"`
+	APIKey string `header:"X-Api-Key" validate:"required"`
+}
+
+// ListFruitsParams represents the parameters that can
+// be used to filter the fruit's market listing.
+type ListFruitsParams struct {
+	Origin   *string  `query:"origin" description:"filter by fruit origin"`
+	PriceMin *float64 `query:"price_min" description:"filter by minimum inclusive price" validate:"omitempty,min=1"`
+	PriceMax *float64 `query:"price_max" description:"filter by maximum inclusive price" validate:"omitempty,max=15"`
+}
+
+// CreateFruit add a new fruit to the market.
+func CreateFruit(c *gin.Context, fruit *Fruit) (*Fruit, error) {
+
+	return fruit, nil
+}
+
+// DeleteFruit removes a fruit from the market.
+func DeleteFruit(c *gin.Context, params *FruitIdentityParams) error {
+	if params.APIKey == "" {
+		return errors.Forbiddenf("invalid api key")
+	}
+
+	return nil
+}
+
+// ListFruits lists the fruits of the market.
+// Parameters can be used to filter the fruits.
+func ListFruits(c *gin.Context, params *ListFruitsParams) ([]*Fruit, error) {
+	basket := make([]*Fruit, 0)
+
+	c.Header("X-Market-Listing-Size", strconv.Itoa(len(basket)))
+
+	return basket, nil
 }

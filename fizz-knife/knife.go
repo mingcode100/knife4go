@@ -3,6 +3,8 @@ package knife
 import (
 	v3 "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3"
 	"github.com/gin-gonic/gin"
+	"github.com/wI2L/fizz"
+	"github.com/wI2L/fizz/openapi"
 
 	css "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3/knife/webjars/css"
 
@@ -19,9 +21,10 @@ import (
 	oauth "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3/knife/webjars/oauth"
 )
 
-//@param content string swag int 命令生成的swagger.json文件里的内容
-func InitSwaggerKnife(router *gin.Engine, swaggerJson string) {
-	v3.AddApiDocRouter(router, swaggerJson)
+func InitSwaggerKnife(router *gin.Engine, infos *openapi.Info) *fizz.Fizz {
+
+	fizz := v3.AddApiDocRouter(router, infos)
+
 	v3.AddSwaggerResourcesRouter(router)
 
 	knife.AddRouterOfDocHtml(router)
@@ -162,4 +165,5 @@ func InitSwaggerKnife(router *gin.Engine, swaggerJson string) {
 
 	oauth.AddRouterOfOauth2Html(router)
 
+	return fizz
 }
