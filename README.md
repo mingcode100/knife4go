@@ -76,7 +76,7 @@ knif4j地址：https://gitee.com/xiaoym/knife4j
 
 
 
-#### fizz-knife 
+#### fizz-knife （不用再生成swagger.json，用硬编码替代swagger注解）
 
 - 1. 效果图
 ![image](https://gitee.com/youbeiwuhuan/knife4go/raw/master/img/fizz-knife.png)	
