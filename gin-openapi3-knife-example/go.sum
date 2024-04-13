@@ -1,5 +1,5 @@
-gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife v0.0.0-20231213061538-dc5e9c9d9e2a h1:UmfKbvNBGqF5tiHzlLfI4oyPX20/S3t0M4Vy6v1b+hY=
-gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife v0.0.0-20231213061538-dc5e9c9d9e2a/go.mod h1:3riW5MfDZI5ha+NxPRX57HRpGlZMY9/WfRTYilqQ+lw=
+github.com/mingcode100/knife4go/gin-openapi3-knife v0.0.0-20231213061538-dc5e9c9d9e2a h1:UmfKbvNBGqF5tiHzlLfI4oyPX20/S3t0M4Vy6v1b+hY=
+github.com/mingcode100/knife4go/gin-openapi3-knife v0.0.0-20231213061538-dc5e9c9d9e2a/go.mod h1:3riW5MfDZI5ha+NxPRX57HRpGlZMY9/WfRTYilqQ+lw=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

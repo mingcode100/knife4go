@@ -1,6 +1,6 @@
 cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
-gitee.com/youbeiwuhuan/knife4go/fizz-knife v0.0.0-20240310062715-de0a3cd8d329 h1:0NCYwMXDfJDJOrQ7Pu8eW+GlAAXxAbLL1KujU9WuFDA=
-gitee.com/youbeiwuhuan/knife4go/fizz-knife v0.0.0-20240310062715-de0a3cd8d329/go.mod h1:for+XUvNnNhCYWcdW0iqmA/L/+/YF/W/3gokHBWbZuE=
+github.com/mingcode100/knife4go/fizz-knife v0.0.0-20240310062715-de0a3cd8d329 h1:0NCYwMXDfJDJOrQ7Pu8eW+GlAAXxAbLL1KujU9WuFDA=
+github.com/mingcode100/knife4go/fizz-knife v0.0.0-20240310062715-de0a3cd8d329/go.mod h1:for+XUvNnNhCYWcdW0iqmA/L/+/YF/W/3gokHBWbZuE=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/Pallinder/go-randomdata v1.2.0 h1:DZ41wBchNRb/0GfsePLiSwb0PHZmT67XY00lCDlaYPg=

@@ -3,7 +3,7 @@ module gin-openapi3-knife-example
 go 1.19
 
 require (
-	gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife v0.0.0-20231213061538-dc5e9c9d9e2a
+	github.com/mingcode100/knife4go/gin-openapi3-knife v0.0.0-20231213061538-dc5e9c9d9e2a
 	github.com/gin-gonic/gin v1.7.4
 )
 

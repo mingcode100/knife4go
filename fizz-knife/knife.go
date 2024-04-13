@@ -1,24 +1,24 @@
 package knife
 
 import (
-	v3 "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3"
+	v3 "github.com/mingcode100/knife4go/fizz-knife/v3"
 	"github.com/gin-gonic/gin"
 	"github.com/wI2L/fizz"
 	"github.com/wI2L/fizz/openapi"
 
-	css "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3/knife/webjars/css"
+	css "github.com/mingcode100/knife4go/fizz-knife/v3/knife/webjars/css"
 
-	fonts "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3/knife/webjars/fonts"
+	fonts "github.com/mingcode100/knife4go/fizz-knife/v3/knife/webjars/fonts"
 
-	icons "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3/knife/img/icons"
+	icons "github.com/mingcode100/knife4go/fizz-knife/v3/knife/img/icons"
 
-	img "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3/knife/webjars/img"
+	img "github.com/mingcode100/knife4go/fizz-knife/v3/knife/webjars/img"
 
-	js "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3/knife/webjars/js"
+	js "github.com/mingcode100/knife4go/fizz-knife/v3/knife/webjars/js"
 
-	knife "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3/knife"
+	knife "github.com/mingcode100/knife4go/fizz-knife/v3/knife"
 
-	oauth "gitee.com/youbeiwuhuan/knife4go/fizz-knife/v3/knife/webjars/oauth"
+	oauth "github.com/mingcode100/knife4go/fizz-knife/v3/knife/webjars/oauth"
 )
 
 func InitSwaggerKnife(router *gin.Engine, infos *openapi.Info) *fizz.Fizz {

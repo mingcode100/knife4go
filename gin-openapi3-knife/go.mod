@@ -1,4 +1,4 @@
-module gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife
+module github.com/mingcode100/knife4go/gin-openapi3-knife
 
 go 1.15
 
