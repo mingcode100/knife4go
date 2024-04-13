@@ -1,13 +1,10 @@
 package knife
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
 	"github.com/gin-gonic/gin"
-
+	"github.com/mingcode100/knife4go/gin-swagger-knife/constant"
+	"github.com/mingcode100/knife4go/gin-swagger-knife/utils"
 )
-
 
 const (
 	ROBOTS_TXT_RELATIVE_PATH = constant.ROOT_PATH + "/robots.txt"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfRobotsTxt(router *gin.Engine) {
-    
+
 	utils.GetOther(router, ROBOTS_TXT_RELATIVE_PATH, ROBOTS_TXT_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

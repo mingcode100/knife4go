@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 	"fmt"
-	"gitee.com/youbeiwuhuan/knife4go/knife-vue-2-go-code/utils"
+	"github.com/mingcode100/knife4go/knife-vue-2-go-code/utils"
 	"io/ioutil"
 	"os"
 	"strconv"
@@ -83,7 +83,7 @@ func add2KnifeArgs(args *KnifeArgs, args2 DistFileTemplArgs) {
 
 }
 
-//生成go文件
+// 生成go文件
 func makeDistGoFile(args DistFileTemplArgs, path string) {
 	//TODO 生成go文件
 	utils.CreateDirIfNotExists(path)

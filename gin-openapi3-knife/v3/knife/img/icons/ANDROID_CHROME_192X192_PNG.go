@@ -1,13 +1,10 @@
 package icons
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
+	"github.com/mingcode100/knife4go/gin-openapi3-knife/constant"
+	"github.com/mingcode100/knife4go/gin-openapi3-knife/utils"
 )
-
 
 const (
 	ANDROID_CHROME_192X192_PNG_RELATIVE_PATH = constant.ROOT_PATH + "/img/icons/android-chrome-192x192.png"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfAndroidChrome192x192Png(router *gin.Engine) {
-    
+
 	utils.GetOther(router, ANDROID_CHROME_192X192_PNG_RELATIVE_PATH, ANDROID_CHROME_192X192_PNG_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

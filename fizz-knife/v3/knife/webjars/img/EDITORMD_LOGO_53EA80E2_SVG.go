@@ -1,9 +1,9 @@
 package img
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfEditormdLogo53ea80e2Svg(router *gin.Engine) {
 	utils.GetOther(router, EDITORMD_LOGO_53EA80E2_SVG_RELATIVE_PATH, EDITORMD_LOGO_53EA80E2_SVG_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

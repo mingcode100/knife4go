@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	gin_swagger_knife "gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife"
 	"github.com/gin-gonic/gin"
+	gin_swagger_knife "github.com/mingcode100/knife4go/gin-swagger-knife"
 	"io/ioutil"
 	"log"
 	"net/http"

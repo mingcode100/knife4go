@@ -1,9 +1,9 @@
 package img
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfLoading2x695405a9Gif(router *gin.Engine) {
 	utils.GetOther(router, LOADING2X_695405A9_GIF_RELATIVE_PATH, LOADING2X_695405A9_GIF_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

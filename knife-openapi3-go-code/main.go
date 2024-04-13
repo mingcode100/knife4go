@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gitee.com/youbeiwuhuan/knife4go/knife-openapi3-go-code/code"
-	"gitee.com/youbeiwuhuan/knife4go/knife-openapi3-go-code/utils"
+	"github.com/mingcode100/knife4go/knife-openapi3-go-code/code"
+	"github.com/mingcode100/knife4go/knife-openapi3-go-code/utils"
 	"os"
 	"text/template"
 )

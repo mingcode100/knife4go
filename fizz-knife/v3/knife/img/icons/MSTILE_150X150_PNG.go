@@ -1,9 +1,9 @@
 package icons
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfMstile150x150Png(router *gin.Engine) {
 	utils.GetOther(router, MSTILE_150X150_PNG_RELATIVE_PATH, MSTILE_150X150_PNG_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

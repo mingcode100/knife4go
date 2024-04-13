@@ -1,9 +1,9 @@
 package icons
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfSafariPinnedTabSvg(router *gin.Engine) {
 	utils.GetOther(router, SAFARI_PINNED_TAB_SVG_RELATIVE_PATH, SAFARI_PINNED_TAB_SVG_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

@@ -1,9 +1,9 @@
 package css
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfAppAc23e017CssGz(router *gin.Engine) {
 	utils.GetOther(router, APP_AC23E017_CSS_GZ_RELATIVE_PATH, APP_AC23E017_CSS_GZ_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

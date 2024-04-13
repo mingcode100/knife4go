@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	fizz_knife "gitee.com/youbeiwuhuan/knife4go/fizz-knife"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/juju/errors"
 	"github.com/loopfz/gadgeto/tonic"
+	fizz_knife "github.com/mingcode100/knife4go/fizz-knife"
 	"github.com/wI2L/fizz"
 	"github.com/wI2L/fizz/openapi"
 	"log"

@@ -1,9 +1,9 @@
 package img
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfFontawesomeWebfont29800836Svg(router *gin.Engine) {
 	utils.GetOther(router, FONTAWESOME_WEBFONT_29800836_SVG_RELATIVE_PATH, FONTAWESOME_WEBFONT_29800836_SVG_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

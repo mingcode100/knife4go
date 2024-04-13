@@ -1,9 +1,9 @@
 package v3
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/gin-openapi3-knife/constant"
+	"github.com/mingcode100/knife4go/gin-openapi3-knife/utils"
 )
 
 const (

@@ -1,9 +1,9 @@
 package icons
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfFavicon32x32Png(router *gin.Engine) {
 	utils.GetOther(router, FAVICON_32X32_PNG_RELATIVE_PATH, FAVICON_32X32_PNG_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

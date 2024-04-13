@@ -1,9 +1,9 @@
 package css
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfChunkD7d5f59cA9ffbfcbCss(router *gin.Engine) {
 	utils.GetCss(router, CHUNK_D7D5F59C_A9FFBFCB_CSS_RELATIVE_PATH, CHUNK_D7D5F59C_A9FFBFCB_CSS_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

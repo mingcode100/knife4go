@@ -1,13 +1,10 @@
 package icons
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
 	"github.com/gin-gonic/gin"
-
+	"github.com/mingcode100/knife4go/gin-swagger-knife/constant"
+	"github.com/mingcode100/knife4go/gin-swagger-knife/utils"
 )
-
 
 const (
 	MSTILE_150X150_PNG_RELATIVE_PATH = constant.ROOT_PATH + "/img/icons/mstile-150x150.png"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfMstile150x150Png(router *gin.Engine) {
-    
+
 	utils.GetOther(router, MSTILE_150X150_PNG_RELATIVE_PATH, MSTILE_150X150_PNG_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

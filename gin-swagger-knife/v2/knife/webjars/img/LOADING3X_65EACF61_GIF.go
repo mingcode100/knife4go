@@ -1,13 +1,10 @@
 package img
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
 	"github.com/gin-gonic/gin"
-
+	"github.com/mingcode100/knife4go/gin-swagger-knife/constant"
+	"github.com/mingcode100/knife4go/gin-swagger-knife/utils"
 )
-
 
 const (
 	LOADING3X_65EACF61_GIF_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/img/loading3x.65eacf61.gif"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfLoading3x65eacf61Gif(router *gin.Engine) {
-    
+
 	utils.GetOther(router, LOADING3X_65EACF61_GIF_RELATIVE_PATH, LOADING3X_65EACF61_GIF_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

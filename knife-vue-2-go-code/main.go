@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gitee.com/youbeiwuhuan/knife4go/knife-vue-2-go-code/code"
-	"gitee.com/youbeiwuhuan/knife4go/knife-vue-2-go-code/utils"
+	"github.com/mingcode100/knife4go/knife-vue-2-go-code/code"
+	"github.com/mingcode100/knife4go/knife-vue-2-go-code/utils"
 	"os"
 	"text/template"
 )
@@ -20,7 +20,7 @@ func main() {
 
 }
 
-//生成go文件
+// 生成go文件
 func makeKnifeFile(args *code.KnifeArgs, path string) {
 	utils.CreateDirIfNotExists(path)
 

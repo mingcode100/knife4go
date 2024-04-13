@@ -1,9 +1,9 @@
 package fonts
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfFontawesomeWebfontD9ee23d5Woff(router *gin.Engine) {
 	utils.GetOther(router, FONTAWESOME_WEBFONT_D9EE23D5_WOFF_RELATIVE_PATH, FONTAWESOME_WEBFONT_D9EE23D5_WOFF_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

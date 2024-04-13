@@ -1,13 +1,10 @@
 package js
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
+	"github.com/mingcode100/knife4go/gin-openapi3-knife/constant"
+	"github.com/mingcode100/knife4go/gin-openapi3-knife/utils"
 )
-
 
 const (
 	CHUNK_260D712A_390177FE_JS_LICENSE_TXT_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/js/chunk-260d712a.390177fe.js.LICENSE.txt"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfChunk260d712a390177feJsLICENSETxt(router *gin.Engine) {
-    
+
 	utils.GetOther(router, CHUNK_260D712A_390177FE_JS_LICENSE_TXT_RELATIVE_PATH, CHUNK_260D712A_390177FE_JS_LICENSE_TXT_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

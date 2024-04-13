@@ -1,13 +1,10 @@
 package css
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
+	"github.com/mingcode100/knife4go/gin-openapi3-knife/constant"
+	"github.com/mingcode100/knife4go/gin-openapi3-knife/utils"
 )
-
 
 const (
 	CHUNK_75464E7E_8FB93BA5_CSS_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/css/chunk-75464e7e.8fb93ba5.css"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfChunk75464e7e8fb93ba5Css(router *gin.Engine) {
-    
-    utils.GetCss(router, CHUNK_75464E7E_8FB93BA5_CSS_RELATIVE_PATH, CHUNK_75464E7E_8FB93BA5_CSS_HEX_CONTENT)
-	
+
+	utils.GetCss(router, CHUNK_75464E7E_8FB93BA5_CSS_RELATIVE_PATH, CHUNK_75464E7E_8FB93BA5_CSS_HEX_CONTENT)
+
 }
-
-
-
-
-
-
-

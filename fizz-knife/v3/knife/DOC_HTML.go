@@ -1,9 +1,9 @@
 package knife
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfDocHtml(router *gin.Engine) {
 	utils.GetHtml(router, DOC_HTML_RELATIVE_PATH, DOC_HTML_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

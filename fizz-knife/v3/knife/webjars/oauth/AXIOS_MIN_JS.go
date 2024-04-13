@@ -1,9 +1,9 @@
 package oauth
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfAxiosMinJs(router *gin.Engine) {
 	utils.GetJs(router, AXIOS_MIN_JS_RELATIVE_PATH, AXIOS_MIN_JS_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

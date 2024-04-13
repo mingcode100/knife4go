@@ -1,13 +1,10 @@
 package oauth
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-swagger-knife/utils"
 	"github.com/gin-gonic/gin"
-
+	"github.com/mingcode100/knife4go/gin-swagger-knife/constant"
+	"github.com/mingcode100/knife4go/gin-swagger-knife/utils"
 )
-
 
 const (
 	JQUERY_MIN_JS_RELATIVE_PATH = constant.ROOT_PATH + "/oauth/jquery.min.js"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfJqueryMinJs(router *gin.Engine) {
-    
-    utils.GetJs(router, JQUERY_MIN_JS_RELATIVE_PATH, JQUERY_MIN_JS_HEX_CONTENT)
-    
+
+	utils.GetJs(router, JQUERY_MIN_JS_RELATIVE_PATH, JQUERY_MIN_JS_HEX_CONTENT)
+
 }
-
-
-
-
-
-
-

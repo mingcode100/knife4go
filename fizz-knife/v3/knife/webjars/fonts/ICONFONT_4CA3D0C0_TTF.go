@@ -1,9 +1,9 @@
 package fonts
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfIconfont4ca3d0c0Ttf(router *gin.Engine) {
 	utils.GetOther(router, ICONFONT_4CA3D0C0_TTF_RELATIVE_PATH, ICONFONT_4CA3D0C0_TTF_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

@@ -1,9 +1,9 @@
 package js
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -17,10 +17,3 @@ func AddRouterOfChunk260d712a390177feJs(router *gin.Engine) {
 	utils.GetJs(router, CHUNK_260D712A_390177FE_JS_RELATIVE_PATH, CHUNK_260D712A_390177FE_JS_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-

@@ -1,13 +1,10 @@
 package img
 
-
 import (
-	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/gin-openapi3-knife/utils"
 	"github.com/gin-gonic/gin"
-
+	"github.com/mingcode100/knife4go/gin-openapi3-knife/constant"
+	"github.com/mingcode100/knife4go/gin-openapi3-knife/utils"
 )
-
 
 const (
 	LOADING2X_695405A9_GIF_RELATIVE_PATH = constant.ROOT_PATH + "/webjars/img/loading2x.695405a9.gif"
@@ -16,14 +13,7 @@ const (
 )
 
 func AddRouterOfLoading2x695405a9Gif(router *gin.Engine) {
-    
+
 	utils.GetOther(router, LOADING2X_695405A9_GIF_RELATIVE_PATH, LOADING2X_695405A9_GIF_HEX_CONTENT)
-	
+
 }
-
-
-
-
-
-
-

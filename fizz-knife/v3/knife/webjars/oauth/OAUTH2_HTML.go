@@ -1,9 +1,9 @@
 package oauth
 
 import (
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/constant"
-	"gitee.com/youbeiwuhuan/knife4go/fizz-knife/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/mingcode100/knife4go/fizz-knife/constant"
+	"github.com/mingcode100/knife4go/fizz-knife/utils"
 )
 
 const (
@@ -120,10 +120,3 @@ func AddRouterOfOauth2Html(router *gin.Engine) {
 	utils.GetHtml(router, OAUTH2_HTML_RELATIVE_PATH, OAUTH2_HTML_HEX_CONTENT)
 
 }
-
-
-
-
-
-
-
